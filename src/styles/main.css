@@ -1,0 +1,116 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #7c3aed 0%, #f472b6 100%);
+  color: #fff;
+}
+
+a { color: #f9fafb; text-decoration: none; }
+a:hover, .hero-btn:hover { color: #f472b6; }
+
+.header {
+  background: rgba(34, 34, 49, 0.95);
+  color: #fff;
+  padding: 2rem 1rem 1.2rem 1rem;
+  text-align: center;
+}
+
+.header nav a {
+  margin: 0 10px;
+  color: #f9fafb;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+  transition: background .2s, color .2s;
+}
+.header nav a:hover {
+  background: #7c3aed;
+  color: #f472b6;
+}
+
+.hero-highlight {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: rgba(34, 34, 49, 0.93);
+  padding: 2.5rem 1rem 2rem 1rem;
+  border-radius: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #7c3aed 40%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-btn {
+  background: #7c3aed;
+  color: #fff;
+  padding: 0.7em 1.3em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: filter 0.18s;
+}
+
+section {
+  background: rgba(34, 34, 49, 0.95);
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(124,58,237,0.18);
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.project-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1.2rem;
+  flex: 1 1 230px;
+  min-width: 230px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 12px rgba(124,58,237,0.10);
+}
+.project-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(124,58,237,0.23);
+}
+.tag {
+  display: inline-block;
+  margin: 0 4px 0 0;
+  background: #f472b6;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  padding: 0.2em 0.7em;
+}
+
+.about .social a { margin-right: 18px; font-weight: bold; }
+h1, h2 { color: #f472b6; letter-spacing: 1px; }
+ul { padding-left: 1.3rem; }
+blockquote {
+  border-left: 4px solid #f472b6;
+  margin: 1.5rem 0 0 0;
+  padding: 0.75rem 1rem;
+  color: #ffe;
+  background: rgba(124,58,237,0.09);
+  font-style: italic;
+}
+
+.footer {
+  background: #22223b;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-radius: 0 0 10px 10px;
+}
+@media (max-width: 700px) {
+  section, .header { padding: 1rem !important; }
+  .projects-grid { flex-direction: column; gap: 0.5rem; }
+}
