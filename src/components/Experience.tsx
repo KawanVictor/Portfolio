@@ -2,15 +2,16 @@ function Experience() {
   const roles = [
     {
       title: "Analista Telecom Jr.",
-      company: "Vivo (Telefônica Brasil)",
+      company: "Vivo (Telefônica Brasil) · Engenharia de Transporte e Infraestrutura",
       period: "mar/25 – atual",
-      summary: "Monitoramento em tempo real de redes digitais (banda larga, TV, voz) de clientes corporativos e residenciais.",
+      summary: "Desenvolvimento de integrações entre sistemas, automações e ferramentas internas para operação de rede.",
       items: [
-        "Otimização dos fluxos de diagnóstico (reduzido em 30% o tempo de solução de incidentes críticos).",
-        "Desenvolvimento de scripts para automação de registro/notificação de eventos.",
-        "Liderança em projetos de documentação técnica e dashboards de indicadores operacionais.",
-        "Gestão avançada de alarmes sistêmicos e relatórios semanais.",
-        "Treinamento de novos colaboradores e incentivo à melhoria contínua."
+        "Conectores e integração de sistemas: APIs REST entre plataformas de rede, monitoramento e ferramentas internas.",
+        "Integração de agentes de IA para automação de rotinas operacionais.",
+        "Empacotamento e deploy de serviços com Docker e Kubernetes.",
+        "Observabilidade com Grafana, Zabbix, OpenSearch e Graylog para métricas, logs e KPIs.",
+        "Painel de monitoramento de infraestrutura que centraliza o status dos equipamentos (Node.js, TypeScript, React).",
+        "Automação de tarefas repetitivas do N1, com acompanhamento de KPI/SLA."
       ]
     },
     {

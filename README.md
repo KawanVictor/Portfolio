@@ -6,7 +6,7 @@
 
 ## ✨ Sobre
 
-Bem-vindo ao meu portfólio! Aqui apresento minha trajetória acadêmica, experiências profissionais, projetos mais relevantes (como o UNICHATO) e meus interesses em tecnologia, esportes e design. O site foi pensado para ser moderno, responsivo e refletir minha identidade visual inspirada nas redes sociais.
+Bem-vindo ao meu portfólio! Sou Desenvolvedor Full Stack com experiência em telecom. Aqui apresento minha experiência profissional, minhas habilidades e meus projetos mais relevantes: [SQL-Interface](https://github.com/KawanVictor/SQL-Interface), [TetrisV2-java](https://github.com/KawanVictor/TetrisV2-java), [ChessGame](https://github.com/KawanVictor/ChessGame) e [War](https://github.com/KawanVictor/War).
 
 ---
 
