@@ -47,6 +47,9 @@ export interface Content {
     lead: string;
     ctaProjects: string;
     ctaContact: string;
+    ctaCv: string;
+    cvUrl: string;
+    highlights: { value: string; label: string }[];
   };
   about: { title: string; paragraphs: string[]; quote: string };
   experience: {
@@ -96,7 +99,15 @@ const pt: Content = {
     greeting: "Olá, eu sou o",
     lead: "Trabalho na Engenharia de Transporte e Infraestrutura da Telefônica/Vivo, onde desenvolvo integrações entre sistemas, automações e ferramentas internas para operação de rede.",
     ctaProjects: "Ver Projetos em Destaque",
-    ctaContact: "Entrar em Contato"
+    ctaContact: "Entrar em Contato",
+    ctaCv: "Baixar CV",
+    cvUrl: "/cv/Kawan_Cavalcante_Curriculo_PT.pdf",
+    highlights: [
+      { value: "5+ anos", label: "na Vivo (Telefônica Brasil)" },
+      { value: "Full Stack", label: "React, TypeScript, Node.js, NestJS e Python" },
+      { value: "DevOps & IA", label: "Docker, Kubernetes e integração de agentes de IA" },
+      { value: "Observabilidade", label: "Grafana, Zabbix, OpenSearch e Graylog" }
+    ]
   },
   about: {
     title: "Sobre Mim",
@@ -299,7 +310,15 @@ const en: Content = {
     greeting: "Hi, I'm",
     lead: "I work in Transport & Infrastructure Engineering at Telefônica/Vivo, building system integrations, automation and internal tools for network operations.",
     ctaProjects: "See Featured Projects",
-    ctaContact: "Get in Touch"
+    ctaContact: "Get in Touch",
+    ctaCv: "Download Resume",
+    cvUrl: "/cv/Kawan_Cavalcante_Resume_EN.pdf",
+    highlights: [
+      { value: "5+ years", label: "at Vivo (Telefônica Brasil)" },
+      { value: "Full Stack", label: "React, TypeScript, Node.js, NestJS and Python" },
+      { value: "DevOps & AI", label: "Docker, Kubernetes and AI-agent integration" },
+      { value: "Observability", label: "Grafana, Zabbix, OpenSearch and Graylog" }
+    ]
   },
   about: {
     title: "About Me",

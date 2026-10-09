@@ -5,6 +5,7 @@ function Experience({ t }: { t: Content }) {
     <section id="experience" className="experience">
       <h2>{t.experience.title}</h2>
 
+      <div className="experience-layout">
       <ol className="timeline">
         {t.experience.roles.map((role, idx) => (
           <li className="timeline-item" key={idx}>
@@ -36,6 +37,7 @@ function Experience({ t }: { t: Content }) {
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </section>
   );
