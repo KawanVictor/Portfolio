@@ -1,8 +1,10 @@
-function Footer() {
+import type { Content } from '../content';
+
+function Footer({ t }: { t: Content }) {
   return (
     <footer className="footer">
       <p>
-        © {new Date().getFullYear()} Kawan Victor Cavalcante — Inspirado por design e conteúdo digital
+        © {new Date().getFullYear()} Kawan Victor Cavalcante — {t.footer}
       </p>
     </footer>
   );
