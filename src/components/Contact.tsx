@@ -2,11 +2,20 @@ function Contact() {
   return (
     <section id="contact" className="contact">
       <h2>Contato</h2>
-      <ul>
-        <li><strong>E-mail:</strong> <a href="mailto:kawan.cavalcante@outlook.com">kawan.cavalcante@outlook.com</a></li>
-        <li><strong>Telefone:</strong> (41) 99119-9082</li>
-        <li><strong>Localização:</strong> Curitiba, Paraná, Brasil</li>
-      </ul>
+      <div className="card-grid">
+        <div className="card reveal">
+          <span className="contact-label">E-mail</span>
+          <a className="contact-value" href="mailto:kawan.cavalcante@outlook.com">kawan.cavalcante@outlook.com</a>
+        </div>
+        <div className="card reveal">
+          <span className="contact-label">Telefone</span>
+          <span className="contact-value">(41) 99119-9082</span>
+        </div>
+        <div className="card reveal">
+          <span className="contact-label">Localização</span>
+          <span className="contact-value">Curitiba, Paraná, Brasil</span>
+        </div>
+      </div>
     </section>
   );
 }

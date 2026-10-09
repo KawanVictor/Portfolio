@@ -13,15 +13,16 @@ function Projects() {
       url: "https://github.com/KawanVictor/TetrisV2-java"
     },
     {
+      name: "ChessGame",
+      desc: "Xadrez com interface gráfica para dois jogadores ou contra a IA (minimax com poda alfa-beta). Aplica as regras oficiais, incluindo roque, en passant e promoção, detecta xeque-mate e empates e permite desfazer jogadas.",
+      tags: ["Java", "Swing", "IA Minimax", "POO"],
+      url: "https://github.com/KawanVictor/ChessGame"
+    },
+    {
       name: "War",
       desc: "Jogo de tabuleiro War (inspirado em Risk) com motor de regras próprio, modo interativo no terminal e servidor web para partidas online em tempo real.",
       tags: ["Python", "Flask", "Socket.IO"],
       url: "https://github.com/KawanVictor/War"
-    },
-    {
-      name: "UNICHATO",
-      desc: "Plataforma inovadora para trocas anônimas entre universitários, promovendo integração fora de redes convencionais.",
-      tags: ["React", "Node.js", "WebSocket", "UX Design"]
     }
   ];
 
@@ -30,7 +31,7 @@ function Projects() {
       <h2>Projetos em Destaque</h2>
       <div className="projects-grid">
         {projectList.map((proj, idx) => (
-          <div className="project-card" key={idx}>
+          <div className="card project-card reveal" key={idx}>
             <h3>{proj.name}</h3>
             <p>{proj.desc}</p>
             <div className="tags">
@@ -38,14 +39,12 @@ function Projects() {
                 <span className="tag" key={tIdx}>{tag}</span>
               ))}
             </div>
-            {proj.url && (
-              <a className="project-link" href={proj.url} target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-            )}
+            <a className="project-link" href={proj.url} target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
           </div>
         ))}
       </div>
-      <p>
-        Veja mais no <a href="https://github.com/KawanVictor" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      <p className="projects-more">
+        Veja mais no <a className="text-link" href="https://github.com/KawanVictor" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
     </section>
   );

@@ -1,16 +1,50 @@
 function Skills() {
+  const skillGroups = [
+    {
+      title: "Desenvolvimento Web",
+      desc: "Desenvolvimento web moderno, com criação de layouts e identidade visual.",
+      tags: ["JavaScript", "TypeScript", "React", "HTML5", "CSS3"]
+    },
+    {
+      title: "Dados",
+      desc: "Análise de dados e dashboards para visualização de indicadores.",
+      tags: ["SQL", "Dashboards"]
+    },
+    {
+      title: "Infraestrutura & Automação",
+      desc: "Monitoramento, troubleshooting e automação de rotinas técnicas.",
+      tags: ["Shell Script", "Monitoramento", "Troubleshooting"]
+    },
+    {
+      title: "Comunicação",
+      desc: "Comunicação visual, produção de conteúdo tecnológico/motivacional, apresentação de resultados e redação técnica.",
+      tags: []
+    },
+    {
+      title: "Trabalho em Equipe",
+      desc: "Atuação colaborativa em times multidisciplinares e proatividade em soluções.",
+      tags: []
+    }
+  ];
+
   return (
     <section id="skills" className="skills">
       <h2>Principais Habilidades</h2>
-      <ul>
-        <li>Desenvolvimento web moderno: JavaScript, TypeScript, React, HTML5, CSS3</li>
-        <li>Criação de layouts modernos e identidade visual inspirada em tendências do Instagram</li>
-        <li>Monitoramento, troubleshooting e automação de rotinas técnicas (Shell Script)</li>
-        <li>SQL, análise de dados, dashboards para visualização de indicadores</li>
-        <li>Comunicação visual e produção de conteúdo tecnológico/motivacional</li>
-        <li>Atuação colaborativa em times multidisciplinares</li>
-        <li>Apresentação de resultados, redação técnica, proatividade em soluções</li>
-      </ul>
+      <div className="card-grid">
+        {skillGroups.map((group, idx) => (
+          <div className="card reveal" key={idx}>
+            <h3>{group.title}</h3>
+            <p>{group.desc}</p>
+            {group.tags.length > 0 && (
+              <div className="tags">
+                {group.tags.map((tag, tIdx) => (
+                  <span className="tag" key={tIdx}>{tag}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

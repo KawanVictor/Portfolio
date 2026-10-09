@@ -1,12 +1,14 @@
 function HeroHighlight() {
   return (
-    <section className="hero-highlight">
-      <h1>Olá, eu sou o Kawan Victor!</h1>
-      <p>
-        Desenvolvedor e Analista | Apaixonado por <span className="gradient-text">tecnologia</span>, <span className="gradient-text">design</span> e <span className="gradient-text">esportes</span>.
+    <section id="top" className="hero-highlight">
+      <span className="hero-eyebrow">Tecnologia, Design & Esportes • Portfólio Interativo</span>
+      <h1>Olá, eu sou o <span className="gradient-text">Kawan Victor</span>!</h1>
+      <p className="hero-lead">
+        Desenvolvedor e Analista | Apaixonado por <strong>tecnologia</strong>, <strong>design</strong> e <strong>esportes</strong>.
       </p>
       <div className="hero-cta">
-        <a href="#projects" className="hero-btn">Ver Projetos em Destaque</a>
+        <a href="#projects" className="btn btn-primary">Ver Projetos em Destaque</a>
+        <a href="#contact" className="btn btn-ghost">Entrar em Contato</a>
       </div>
     </section>
   );
