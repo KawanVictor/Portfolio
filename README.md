@@ -21,6 +21,17 @@ Bem-vindo ao meu portfólio! Aqui apresento minha trajetória acadêmica, experi
 
 ## 📂 Estrutura do Projeto
 
+```
+├── index.html
+├── src/
+│   ├── main.tsx
+│   ├── App.tsx
+│   ├── components/   # Header, HeroHighlight, About, Experience, Projects, Skills, Interests, Contact, Footer
+│   └── styles/main.css
+├── eslint.config.js
+├── tsconfig.json
+└── vite.config.ts
+```
 
 ---
 
@@ -28,14 +39,22 @@ Bem-vindo ao meu portfólio! Aqui apresento minha trajetória acadêmica, experi
 
 1. **Clone o repositório:**
 
-git clone https://github.com/KawanVictor/portfolio.git
-cd portfolio
-
+```bash
+git clone https://github.com/KawanVictor/Portfolio.git
+cd Portfolio
+```
 
 2. **Instale as dependências:**
 
+```bash
+npm install
+```
 
 3. **Inicie o servidor de desenvolvimento:**
+
+```bash
+npm run dev
+```
 
 O projeto estará disponível em [http://localhost:5173](http://localhost:5173)
 
@@ -46,7 +65,7 @@ O projeto estará disponível em [http://localhost:5173](http://localhost:5173)
 - Interface responsiva e tema visual autoral
 - Destaques de projetos (com grid e efeitos visuais)
 - Experiência profissional detalhada e habilidades técnicas
-- Seção sobre interesses, depoimentos e contato rápido
+- Seção sobre interesses e contato rápido
 - Estrutura pronta para easy deploy em Vercel, Netlify, etc
 
 ---
