@@ -1,8 +1,10 @@
 function Header() {
   return (
     <header className="header">
-      <h2>Kawan Victor Cavalcante</h2>
-      <p>Tecnologia, Design & Esportes • Portfólio Interativo</p>
+      <div className="header-brand">
+        <h2>Kawan Victor Cavalcante</h2>
+        <p>Tecnologia, Design & Esportes • Portfólio Interativo</p>
+      </div>
       <nav>
         <a href="#about">Sobre</a>
         <a href="#experience">Experiência</a>

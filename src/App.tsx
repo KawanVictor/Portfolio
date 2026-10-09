@@ -11,8 +11,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <HeroHighlight />
       <Header />
+      <HeroHighlight />
       <About />
       <Experience />
       <Projects />
