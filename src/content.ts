@@ -40,6 +40,7 @@ export interface Content {
     openMenu: string;
     switchLang: string;
     switchLangLabel: string;
+    backToTop: string;
   };
   hero: {
     eyebrow: string;
@@ -70,6 +71,7 @@ export interface Content {
   skills: { title: string; groups: TaggedCard[] };
   education: { title: string; items: { title: string; desc: string; status: string }[] };
   interests: { title: string; list: TextCard[] };
+  meta: { title: string; description: string };
   contact: { title: string; email: string; location: string; locationValue: string };
   footer: string;
 }
@@ -92,12 +94,13 @@ const pt: Content = {
     contact: "Contato",
     openMenu: "Abrir menu",
     switchLang: "EN",
-    switchLangLabel: "Switch to English"
+    switchLangLabel: "Switch to English",
+    backToTop: "Voltar ao topo"
   },
   hero: {
     eyebrow: "Desenvolvedor Full Stack · Telecom + Software",
     greeting: "Olá, eu sou o",
-    lead: "Trabalho na Engenharia de Transporte e Infraestrutura da Telefônica/Vivo, onde desenvolvo integrações entre sistemas, automações e ferramentas internas para operação de rede.",
+    lead: "Trabalho na equipe de Transformação Digital da Vivo (Telefônica Brasil), onde desenvolvo integrações entre sistemas, automações e ferramentas internas para operação de rede.",
     ctaProjects: "Ver Projetos em Destaque",
     ctaContact: "Entrar em Contato",
     ctaCv: "Baixar CV",
@@ -123,7 +126,7 @@ const pt: Content = {
     roles: [
       {
         title: "Analista Telecom Jr.",
-        company: "Vivo (Telefônica Brasil) · Engenharia de Transporte e Infraestrutura",
+        company: "Vivo (Telefônica Brasil) · Equipe de Transformação Digital",
         period: "mar/25 – atual",
         summary: "Desenvolvimento de integrações entre sistemas, automações e ferramentas internas para operação de rede.",
         items: [
@@ -278,10 +281,15 @@ const pt: Content = {
   interests: {
     title: "Interesses Pessoais",
     list: [
-      { title: "Basquete", desc: "Golden State Warriors, NBA, registros esportivos com amigos." },
-      { title: "Futebol", desc: "São Paulo FC e Barcelona, vivências em estádios e campeonatos." },
+      { title: "Basquete", desc: "Meu time é o Golden State Warriors e, sempre que possível, tento assistir a todos os jogos da temporada. Também jogo sempre que dá, e meu jogador favorito é o Shaquille O'Neal." },
+      { title: "Futebol", desc: "Meus times de paixão são o São Paulo FC e o Barcelona, mas não nego ir ao estádio ver outros times jogarem. Assisto ao máximo de jogos que consigo, seja qual for o campeonato." },
+      { title: "Fórmula 1", desc: "Acompanho há mais de 10 anos, sofrendo na torcida pela Mercedes. Meus pilotos favoritos são Max Verstappen, Ayrton Senna e Lewis Hamilton, e ainda sinto saudade da temporada de 2021." },
       { title: "Design & Layouts", desc: "Composições criativas, identidade visual e compartilhamento visual." }
     ]
+  },
+  meta: {
+    title: "Kawan Victor Cavalcante | Portfólio",
+    description: "Portfólio de Kawan Victor Cavalcante - Desenvolvedor Full Stack com experiência em telecom: integrações entre sistemas, automações e ferramentas internas."
   },
   contact: {
     title: "Contato",
@@ -303,12 +311,13 @@ const en: Content = {
     contact: "Contact",
     openMenu: "Open menu",
     switchLang: "PT",
-    switchLangLabel: "Mudar para português"
+    switchLangLabel: "Mudar para português",
+    backToTop: "Back to top"
   },
   hero: {
     eyebrow: "Full Stack Developer · Telecom + Software",
     greeting: "Hi, I'm",
-    lead: "I work in Transport & Infrastructure Engineering at Telefônica/Vivo, building system integrations, automation and internal tools for network operations.",
+    lead: "I work on the Digital Transformation team at Vivo (Telefônica Brasil), building system integrations, automation and internal tools for network operations.",
     ctaProjects: "See Featured Projects",
     ctaContact: "Get in Touch",
     ctaCv: "Download Resume",
@@ -334,7 +343,7 @@ const en: Content = {
     roles: [
       {
         title: "Junior Telecom Analyst",
-        company: "Vivo (Telefônica Brasil) · Transport & Infrastructure Engineering",
+        company: "Vivo (Telefônica Brasil) · Digital Transformation team",
         period: "Mar 2025 – present",
         summary: "Building system integrations, automation and internal tools for network operations.",
         items: [
@@ -489,10 +498,15 @@ const en: Content = {
   interests: {
     title: "Personal Interests",
     list: [
-      { title: "Basketball", desc: "Golden State Warriors, NBA, and games with friends." },
-      { title: "Football", desc: "São Paulo FC and Barcelona, stadium experiences and championships." },
+      { title: "Basketball", desc: "My team is the Golden State Warriors and, whenever I can, I try to watch every game of the season. I also play whenever I get the chance, and my favorite player is Shaquille O'Neal." },
+      { title: "Football", desc: "My teams are São Paulo FC and Barcelona, but I never turn down going to the stadium to watch other teams play. I watch as many matches as I can, whatever the competition." },
+      { title: "Formula 1", desc: "I have followed it for over 10 years, suffering as a Mercedes fan. My favorite drivers are Max Verstappen, Ayrton Senna and Lewis Hamilton, and I still miss the 2021 season." },
       { title: "Design & Layouts", desc: "Creative compositions, visual identity and sharing visual work." }
     ]
+  },
+  meta: {
+    title: "Kawan Victor Cavalcante | Portfolio",
+    description: "Portfolio of Kawan Victor Cavalcante - Full Stack Developer with a telecom background: system integrations, automation and internal tools."
   },
   contact: {
     title: "Contact",

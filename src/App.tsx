@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { content, type Lang } from './content';
 import HeroHighlight from './components/HeroHighlight';
 import Header from './components/Header';
@@ -10,6 +11,7 @@ import Education from './components/Education';
 import Interests from './components/Interests';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 const LANG_KEY = 'lang';
 
@@ -29,6 +31,8 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-br' : 'en';
+    document.title = content[lang].meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', content[lang].meta.description);
     try {
       localStorage.setItem(LANG_KEY, lang);
     } catch {
@@ -50,6 +54,8 @@ function App() {
         <Contact t={t} />
       </main>
       <Footer t={t} />
+      <BackToTop t={t} />
+      <SpeedInsights />
     </>
   );
 }

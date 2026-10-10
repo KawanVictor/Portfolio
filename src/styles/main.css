@@ -88,6 +88,7 @@ a:focus-visible, .btn:focus-visible {
   padding: 0.35rem 0.6rem;
   transition: background 0.2s, color 0.2s;
 }
+.header nav a.active { color: #fff; background: var(--primary-soft); }
 .header-actions { display: flex; align-items: center; gap: 0.5rem; order: 3; }
 .lang-toggle, .nav-toggle {
   font: inherit;
@@ -346,6 +347,31 @@ blockquote {
 }
 .contact-label + h3 { margin-top: 0.4rem; }
 .contact-value { display: block; margin-top: 0.35rem; font-weight: 600; overflow-wrap: anywhere; }
+
+.interests .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary-strong);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(2, 8, 23, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 12px;
+  transition: opacity 0.2s, translate 0.2s, visibility 0.2s, background 0.2s;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; translate: 0 0; }
+.back-to-top:hover { background: var(--primary); color: #fff; }
 
 /* Footer */
 .footer {

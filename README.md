@@ -2,7 +2,7 @@
 
 **Desenvolvido em React + TypeScript + Vite**
 
-🔗 **Acesse o site:** [portfolio-kawan15.vercel.app](https://portfolio-kawan15.vercel.app)
+🔗 **Acesse o site:** [kawanvictor.vercel.app](https://kawanvictor.vercel.app)
 
 ---
 
