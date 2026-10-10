@@ -8,9 +8,9 @@ function Header({ t, onToggleLang }: { t: Content; onToggleLang: () => void }) {
   const [activeId, setActiveId] = useState("");
   const links = [
     { id: "about", label: t.nav.about },
-    { id: "experience", label: t.nav.experience },
     { id: "projects", label: t.nav.projects },
     { id: "skills", label: t.nav.skills },
+    { id: "experience", label: t.nav.experience },
     { id: "education", label: t.nav.education },
     { id: "interests", label: t.nav.interests },
     { id: "contact", label: t.nav.contact }

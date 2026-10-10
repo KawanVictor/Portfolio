@@ -13,6 +13,8 @@ interface Project {
   desc: string;
   tags: string[];
   url: string;
+  kind: string;
+  demoAnchor?: string;
   image?: string;
   imageAlt?: string;
 }
@@ -21,6 +23,7 @@ interface TaggedCard {
   title: string;
   desc: string;
   tags: string[];
+  kind?: string;
 }
 
 interface TextCard {
@@ -63,6 +66,24 @@ export interface Content {
     title: string;
     list: Project[];
     viewOnGithub: string;
+    tryDemo: string;
+    demo: {
+      badge: string;
+      title: string;
+      intro: string;
+      inputLabel: string;
+      placeholder: string;
+      run: string;
+      examplesLabel: string;
+      examples: string[];
+      sqlLabel: string;
+      paramsLabel: string;
+      resultLabel: string;
+      totalLabel: string;
+      columns: { canal: string; equipamento: string; tipo_erro: string };
+      empty: string;
+      note: string;
+    };
     more: string;
     workTitle: string;
     workNote: string;
@@ -70,7 +91,7 @@ export interface Content {
   };
   skills: { title: string; groups: TaggedCard[] };
   education: { title: string; items: { title: string; desc: string; status: string }[] };
-  interests: { title: string; list: TextCard[] };
+  interests: { title: string; list: TaggedCard[] };
   meta: { title: string; description: string };
   contact: { title: string; email: string; location: string; locationValue: string };
   footer: string;
@@ -100,7 +121,7 @@ const pt: Content = {
   hero: {
     eyebrow: "Desenvolvedor Full Stack · Telecom + Software",
     greeting: "Olá, eu sou o",
-    lead: "Trabalho na equipe de Transformação Digital da Vivo (Telefônica Brasil), onde desenvolvo integrações entre sistemas, automações e ferramentas internas para operação de rede.",
+    lead: "Na equipe de Transformação Digital da Vivo (Telefônica Brasil), desenvolvo aplicações web de ponta a ponta: interfaces em React e TypeScript, APIs em Node.js, NestJS e Python, banco de dados e deploy com Docker e Kubernetes.",
     ctaProjects: "Ver Projetos em Destaque",
     ctaContact: "Entrar em Contato",
     ctaCv: "Baixar CV",
@@ -184,13 +205,23 @@ const pt: Content = {
         name: "SQL-Interface",
         desc: "Converte perguntas em português em consultas SQL sobre logs de falhas de transmissão. API com parser, gerador e validador de SQL, interface web e tudo sobe com um comando via Docker.",
         tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
-        url: projectUrls.sql
+        url: projectUrls.sql,
+        kind: "Full Stack",
+        demoAnchor: "#sql-demo"
+      },
+      {
+        name: "War",
+        desc: "Jogo de tabuleiro War (inspirado em Risk) com motor de regras próprio, modo interativo no terminal e servidor web para partidas online em tempo real.",
+        tags: ["Python", "Flask", "Socket.IO"],
+        url: projectUrls.war,
+        kind: "Backend · WebSocket"
       },
       {
         name: "Tetris Java PRO",
         desc: "Tetris com interface gráfica Swing, cinco modos de jogo, peça fantasma, hold e ranking das melhores pontuações salvo em PostgreSQL. Projeto final de Programação Orientada a Objetos.",
         tags: ["Java", "Swing", "PostgreSQL", "POO"],
         url: projectUrls.tetris,
+        kind: "Desktop · Java",
         image: "/projects/tetris.png",
         imageAlt: "Tela do jogo Tetris Java PRO"
       },
@@ -198,16 +229,35 @@ const pt: Content = {
         name: "ChessGame",
         desc: "Xadrez com interface gráfica para dois jogadores ou contra a IA (minimax com poda alfa-beta). Aplica as regras oficiais, incluindo roque, en passant e promoção, detecta xeque-mate e empates e permite desfazer jogadas.",
         tags: ["Java", "Swing", "IA Minimax", "POO"],
-        url: projectUrls.chess
-      },
-      {
-        name: "War",
-        desc: "Jogo de tabuleiro War (inspirado em Risk) com motor de regras próprio, modo interativo no terminal e servidor web para partidas online em tempo real.",
-        tags: ["Python", "Flask", "Socket.IO"],
-        url: projectUrls.war
+        url: projectUrls.chess,
+        kind: "Desktop · Java"
       }
     ],
     viewOnGithub: "Ver no GitHub",
+    tryDemo: "Testar a demo",
+    demo: {
+      badge: "Demo interativa",
+      title: "SQL-Interface: pergunte em português",
+      intro: "Escreva uma pergunta sobre os logs de falhas e veja o SQL que o projeto gera, com os valores separados em parâmetros para evitar SQL injection.",
+      inputLabel: "Pergunta em português",
+      placeholder: "Ex.: top canais com mais falhas nos últimos 7 dias",
+      run: "Gerar SQL",
+      examplesLabel: "Exemplos de perguntas",
+      examples: [
+        "top canais com mais falhas nos últimos 7 dias",
+        "equipamentos com mais erros críticos",
+        "falhas da Globo nos últimos 30 dias",
+        "canais com menos falhas hoje",
+        "erros de severidade alta por equipamento"
+      ],
+      sqlLabel: "SQL gerado",
+      paramsLabel: "Parâmetros:",
+      resultLabel: "Resultado",
+      totalLabel: "Total",
+      columns: { canal: "Canal", equipamento: "Equipamento", tipo_erro: "Tipo de erro" },
+      empty: "Nenhum registro nos dados de exemplo para essa pergunta.",
+      note: "Esta demo roda no seu navegador, com a mesma lógica do parser do projeto e as seis linhas de exemplo do repositório. A versão completa usa FastAPI, React e MySQL."
+    },
     more: "Veja mais no",
     workTitle: "Entregas Profissionais",
     workNote: "Código interno da empresa, por isso não está público.",
@@ -215,22 +265,26 @@ const pt: Content = {
       {
         title: "Monitoramento de Infraestrutura",
         desc: "Painel que consome a API de monitoramento da rede e centraliza o status dos equipamentos.",
-        tags: ["Node.js", "TypeScript", "React"]
+        tags: ["Node.js", "TypeScript", "React"],
+        kind: "Full Stack"
       },
       {
         title: "API de Speedtest",
         desc: "Coleta e indexa medições de velocidade para análise de qualidade.",
-        tags: ["Python", "OpenSearch", "Graylog"]
+        tags: ["Python", "OpenSearch", "Graylog"],
+        kind: "Backend"
       },
       {
         title: "KPIs de TV e Banda Larga",
         desc: "Indicadores de clientes afetados, desenvolvidos junto com a área de Qualidade.",
-        tags: ["TypeScript", "React", "SQL"]
+        tags: ["TypeScript", "React", "SQL"],
+        kind: "Full Stack"
       },
       {
         title: "Automação de N1",
         desc: "Mapeamento das atividades do N1 e automação de tarefas repetitivas, com acompanhamento de KPI/SLA.",
-        tags: ["TypeScript", "Python"]
+        tags: ["TypeScript", "Python"],
+        kind: "Backend"
       }
     ]
   },
@@ -238,19 +292,24 @@ const pt: Content = {
     title: "Principais Habilidades",
     groups: [
       {
-        title: "Linguagens",
-        desc: "Do backend ao frontend, com foco em TypeScript e Python.",
-        tags: ["TypeScript", "JavaScript", "Python", "Go", "Java", "C#"]
+        title: "Frontend",
+        desc: "Interfaces web responsivas e painéis de indicadores.",
+        tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]
       },
       {
-        title: "Backend & Frontend",
-        desc: "APIs REST, conectores e interfaces web.",
-        tags: ["Node.js", "NestJS", "FastAPI", "React", "Vue", "Vite"]
+        title: "Backend",
+        desc: "APIs REST, conectores e integrações entre sistemas.",
+        tags: ["Node.js", "NestJS", "Python", "FastAPI", "REST APIs"]
       },
       {
-        title: "Dados & Infraestrutura",
-        desc: "Modelagem de dados, empacotamento e deploy de serviços.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "Docker", "Kubernetes", "Linux", "Git"]
+        title: "Banco de Dados",
+        desc: "Modelagem de dados e consultas.",
+        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL"]
+      },
+      {
+        title: "DevOps",
+        desc: "Empacotamento e deploy de serviços.",
+        tags: ["Docker", "Kubernetes", "Linux", "Git"]
       },
       {
         title: "Observabilidade",
@@ -258,14 +317,9 @@ const pt: Content = {
         tags: ["Grafana", "Zabbix", "OpenSearch", "Graylog"]
       },
       {
-        title: "Telecom",
-        desc: "Equipamentos e ambientes de rede com os quais já trabalhei.",
-        tags: ["Cisco", "Nokia", "Huawei", "IPTV", "OTT"]
-      },
-      {
-        title: "Estudando Agora",
-        desc: "Go para serviços de backend, arquitetura e testes automatizados, e IA aplicada a operações.",
-        tags: ["Go", "NestJS", "Jest", "Agentes de IA"]
+        title: "IA & Automação",
+        desc: "Integração de agentes de IA e automação de rotinas operacionais.",
+        tags: ["Agentes de IA", "Automação de fluxos"]
       }
     ]
   },
@@ -281,14 +335,14 @@ const pt: Content = {
   interests: {
     title: "Interesses Pessoais",
     list: [
-      { title: "Basquete", desc: "Meu time é o Golden State Warriors e, sempre que possível, tento assistir a todos os jogos da temporada. Também jogo sempre que dá, e meu jogador favorito é o Shaquille O'Neal." },
-      { title: "Futebol", desc: "Meus times de paixão são o São Paulo FC e o Barcelona, mas não nego ir ao estádio ver outros times jogarem. Assisto ao máximo de jogos que consigo, seja qual for o campeonato." },
-      { title: "Fórmula 1", desc: "Acompanho há mais de 10 anos, sofrendo na torcida pela Mercedes. Meus pilotos favoritos são Max Verstappen, Ayrton Senna e Lewis Hamilton, e ainda sinto saudade da temporada de 2021." },
-      { title: "Design & Layouts", desc: "Composições criativas, identidade visual e compartilhamento visual." }
+      { title: "Basquete", desc: "Tento assistir a todos os jogos da temporada e jogo sempre que dá.", tags: ["Golden State Warriors", "Shaquille O'Neal"] },
+      { title: "Futebol", desc: "Assisto ao máximo de jogos, de qualquer campeonato, e não nego um estádio.", tags: ["São Paulo FC", "Barcelona"] },
+      { title: "Fórmula 1", desc: "Acompanho há mais de 10 anos, com saudade da temporada de 2021.", tags: ["Mercedes", "Verstappen", "Senna", "Hamilton"] },
+      { title: "Design & Layouts", desc: "Composições criativas e identidade visual.", tags: [] }
     ]
   },
   meta: {
-    title: "Kawan Victor Cavalcante | Portfólio",
+    title: "Kawan Victor Cavalcante | Desenvolvedor Full Stack",
     description: "Portfólio de Kawan Victor Cavalcante - Desenvolvedor Full Stack com experiência em telecom: integrações entre sistemas, automações e ferramentas internas."
   },
   contact: {
@@ -317,7 +371,7 @@ const en: Content = {
   hero: {
     eyebrow: "Full Stack Developer · Telecom + Software",
     greeting: "Hi, I'm",
-    lead: "I work on the Digital Transformation team at Vivo (Telefônica Brasil), building system integrations, automation and internal tools for network operations.",
+    lead: "On the Digital Transformation team at Vivo (Telefônica Brasil), I build web applications end to end: interfaces in React and TypeScript, APIs in Node.js, NestJS and Python, databases, and deployment with Docker and Kubernetes.",
     ctaProjects: "See Featured Projects",
     ctaContact: "Get in Touch",
     ctaCv: "Download Resume",
@@ -401,13 +455,23 @@ const en: Content = {
         name: "SQL-Interface",
         desc: "Turns questions written in Portuguese into SQL queries over broadcast failure logs. API with a parser, SQL builder and validator, a web interface, and everything starts with one Docker command.",
         tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
-        url: projectUrls.sql
+        url: projectUrls.sql,
+        kind: "Full Stack",
+        demoAnchor: "#sql-demo"
+      },
+      {
+        name: "War",
+        desc: "The board game War (inspired by Risk) with its own rules engine, an interactive terminal mode and a web server for real-time online matches.",
+        tags: ["Python", "Flask", "Socket.IO"],
+        url: projectUrls.war,
+        kind: "Backend · WebSocket"
       },
       {
         name: "Tetris Java PRO",
         desc: "Tetris with a Swing GUI, five game modes, ghost piece, hold and a high-score ranking stored in PostgreSQL. Final project for an Object-Oriented Programming course.",
         tags: ["Java", "Swing", "PostgreSQL", "OOP"],
         url: projectUrls.tetris,
+        kind: "Desktop · Java",
         image: "/projects/tetris.png",
         imageAlt: "Tetris Java PRO gameplay screen"
       },
@@ -415,16 +479,35 @@ const en: Content = {
         name: "ChessGame",
         desc: "Chess with a GUI for two players or against an AI (minimax with alpha-beta pruning). Applies the official rules, including castling, en passant and promotion, detects checkmate and draws, and lets you undo moves.",
         tags: ["Java", "Swing", "Minimax AI", "OOP"],
-        url: projectUrls.chess
-      },
-      {
-        name: "War",
-        desc: "The board game War (inspired by Risk) with its own rules engine, an interactive terminal mode and a web server for real-time online matches.",
-        tags: ["Python", "Flask", "Socket.IO"],
-        url: projectUrls.war
+        url: projectUrls.chess,
+        kind: "Desktop · Java"
       }
     ],
     viewOnGithub: "View on GitHub",
+    tryDemo: "Try the demo",
+    demo: {
+      badge: "Interactive demo",
+      title: "SQL-Interface: ask in Portuguese",
+      intro: "Type a question about the failure logs and see the SQL the project generates, with values kept as bound parameters to prevent SQL injection. The parser understands Portuguese.",
+      inputLabel: "Question in Portuguese",
+      placeholder: "e.g. top canais com mais falhas nos últimos 7 dias",
+      run: "Generate SQL",
+      examplesLabel: "Example questions",
+      examples: [
+        "top canais com mais falhas nos últimos 7 dias",
+        "equipamentos com mais erros críticos",
+        "falhas da Globo nos últimos 30 dias",
+        "canais com menos falhas hoje",
+        "erros de severidade alta por equipamento"
+      ],
+      sqlLabel: "Generated SQL",
+      paramsLabel: "Parameters:",
+      resultLabel: "Result",
+      totalLabel: "Total",
+      columns: { canal: "Channel", equipamento: "Equipment", tipo_erro: "Error type" },
+      empty: "No records in the sample data for this question.",
+      note: "This demo runs in your browser, using the same logic as the project's parser and the six sample rows from the repository. The full version uses FastAPI, React and MySQL."
+    },
     more: "See more on",
     workTitle: "Professional Work",
     workNote: "Internal company code, so it is not public.",
@@ -432,22 +515,26 @@ const en: Content = {
       {
         title: "Infrastructure Monitoring",
         desc: "Dashboard that consumes the network monitoring API and centralizes equipment status.",
-        tags: ["Node.js", "TypeScript", "React"]
+        tags: ["Node.js", "TypeScript", "React"],
+        kind: "Full Stack"
       },
       {
         title: "Speedtest API",
         desc: "Collects and indexes speed measurements for quality analysis.",
-        tags: ["Python", "OpenSearch", "Graylog"]
+        tags: ["Python", "OpenSearch", "Graylog"],
+        kind: "Backend"
       },
       {
         title: "TV and Broadband KPIs",
         desc: "Affected-customer indicators, built together with the Quality team.",
-        tags: ["TypeScript", "React", "SQL"]
+        tags: ["TypeScript", "React", "SQL"],
+        kind: "Full Stack"
       },
       {
         title: "L1 Automation",
         desc: "Mapping of L1 activities and automation of repetitive tasks, with KPI/SLA tracking.",
-        tags: ["TypeScript", "Python"]
+        tags: ["TypeScript", "Python"],
+        kind: "Backend"
       }
     ]
   },
@@ -455,19 +542,24 @@ const en: Content = {
     title: "Core Skills",
     groups: [
       {
-        title: "Languages",
-        desc: "From backend to frontend, with a focus on TypeScript and Python.",
-        tags: ["TypeScript", "JavaScript", "Python", "Go", "Java", "C#"]
+        title: "Frontend",
+        desc: "Responsive web interfaces and KPI dashboards.",
+        tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]
       },
       {
-        title: "Backend & Frontend",
-        desc: "REST APIs, connectors and web interfaces.",
-        tags: ["Node.js", "NestJS", "FastAPI", "React", "Vue", "Vite"]
+        title: "Backend",
+        desc: "REST APIs, connectors and system integrations.",
+        tags: ["Node.js", "NestJS", "Python", "FastAPI", "REST APIs"]
       },
       {
-        title: "Data & Infrastructure",
-        desc: "Data modeling, packaging and deploying services.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "Docker", "Kubernetes", "Linux", "Git"]
+        title: "Databases",
+        desc: "Data modeling and queries.",
+        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL"]
+      },
+      {
+        title: "DevOps",
+        desc: "Packaging and deploying services.",
+        tags: ["Docker", "Kubernetes", "Linux", "Git"]
       },
       {
         title: "Observability",
@@ -475,14 +567,9 @@ const en: Content = {
         tags: ["Grafana", "Zabbix", "OpenSearch", "Graylog"]
       },
       {
-        title: "Telecom",
-        desc: "Network equipment and environments I have worked with.",
-        tags: ["Cisco", "Nokia", "Huawei", "IPTV", "OTT"]
-      },
-      {
-        title: "Currently Learning",
-        desc: "Go for backend services, architecture and automated testing, and AI applied to operations.",
-        tags: ["Go", "NestJS", "Jest", "AI Agents"]
+        title: "AI & Automation",
+        desc: "AI-agent integration and automation of operational routines.",
+        tags: ["AI Agents", "Workflow automation"]
       }
     ]
   },
@@ -498,14 +585,14 @@ const en: Content = {
   interests: {
     title: "Personal Interests",
     list: [
-      { title: "Basketball", desc: "My team is the Golden State Warriors and, whenever I can, I try to watch every game of the season. I also play whenever I get the chance, and my favorite player is Shaquille O'Neal." },
-      { title: "Football", desc: "My teams are São Paulo FC and Barcelona, but I never turn down going to the stadium to watch other teams play. I watch as many matches as I can, whatever the competition." },
-      { title: "Formula 1", desc: "I have followed it for over 10 years, suffering as a Mercedes fan. My favorite drivers are Max Verstappen, Ayrton Senna and Lewis Hamilton, and I still miss the 2021 season." },
-      { title: "Design & Layouts", desc: "Creative compositions, visual identity and sharing visual work." }
+      { title: "Basketball", desc: "I try to watch every game of the season and play whenever I can.", tags: ["Golden State Warriors", "Shaquille O'Neal"] },
+      { title: "Football", desc: "I watch as many matches as I can, whatever the competition, and never say no to a stadium.", tags: ["São Paulo FC", "Barcelona"] },
+      { title: "Formula 1", desc: "Following it for over 10 years, still missing the 2021 season.", tags: ["Mercedes", "Verstappen", "Senna", "Hamilton"] },
+      { title: "Design & Layouts", desc: "Creative compositions and visual identity.", tags: [] }
     ]
   },
   meta: {
-    title: "Kawan Victor Cavalcante | Portfolio",
+    title: "Kawan Victor Cavalcante | Full Stack Developer",
     description: "Portfolio of Kawan Victor Cavalcante - Full Stack Developer with a telecom background: system integrations, automation and internal tools."
   },
   contact: {

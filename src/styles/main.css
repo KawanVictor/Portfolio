@@ -310,6 +310,15 @@ blockquote {
   border-color: rgba(56, 189, 248, 0.5);
   box-shadow: 0 16px 40px rgba(2, 8, 23, 0.5);
 }
+.kind-badge {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
 .project-card h3 { font-size: 1.2rem; }
 .project-card p { margin-top: 0.75rem; flex: 1; color: var(--muted); }
 .tags { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -322,9 +331,64 @@ blockquote {
   font-weight: 600;
   padding: 0.2em 0.8em;
 }
-.project-link { margin-top: 1.25rem; font-weight: 600; align-self: flex-start; }
+.project-links { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.project-link { font-weight: 600; }
 .project-link::after { content: ' →'; }
 .projects-more { margin-top: 1.5rem; color: var(--muted); }
+/* SQL-Interface demo */
+.sql-demo { margin-top: 2rem; scroll-margin-top: 5rem; border-color: rgba(56, 189, 248, 0.35); }
+.sql-demo > h3 { font-size: 1.25rem; }
+.sql-demo-intro { margin-top: 0.5rem; color: var(--muted); max-width: 760px; }
+.sql-demo-form { margin-top: 1.25rem; display: flex; gap: 0.75rem; }
+.sql-demo-form input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+}
+.sql-demo-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sql-demo-form .btn { cursor: pointer; font: inherit; font-weight: 600; white-space: nowrap; }
+.sql-demo-examples { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sql-demo-examples .tag { font-family: inherit; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.sql-demo-examples .tag:hover { border-color: var(--accent); color: #fff; }
+.sql-demo-examples .tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sql-demo-output { margin-top: 1.5rem; display: grid; gap: 1.5rem; }
+.sql-demo-output h4 {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.sql-demo pre {
+  margin: 0;
+  padding: 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.sql-demo code { font-family: 'Cascadia Code', Consolas, 'Courier New', monospace; color: #bfdbfe; }
+.sql-demo-params { margin-top: 0.75rem; color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; }
+.sql-demo table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.sql-demo th, .sql-demo td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); }
+.sql-demo th { color: var(--muted); font-weight: 600; }
+.sql-demo th:last-child, .sql-demo td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.sql-demo-empty { color: var(--muted); }
+.sql-demo-note { margin-top: 1.25rem; color: var(--muted); font-size: 0.85rem; }
+@media (min-width: 960px) {
+  .sql-demo-output { grid-template-columns: 1.4fr 1fr; }
+}
+@media (max-width: 480px) {
+  .sql-demo-form { flex-direction: column; }
+}
+
 .subsection-title { margin-top: 3rem; font-size: 1.3rem; }
 .subsection-note { margin: 0.4rem 0 1.25rem 0; color: var(--muted); font-size: 0.95rem; }
 .projects .work-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); }

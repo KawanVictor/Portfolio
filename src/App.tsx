@@ -46,9 +46,9 @@ function App() {
       <main>
         <HeroHighlight t={t} />
         <About t={t} />
-        <Experience t={t} />
         <Projects t={t} />
         <Skills t={t} />
+        <Experience t={t} />
         <Education t={t} />
         <Interests t={t} />
         <Contact t={t} />
