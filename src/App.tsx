@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { content, type Lang } from './content';
 import HeroHighlight from './components/HeroHighlight';
@@ -55,6 +56,7 @@ function App() {
       </main>
       <Footer t={t} />
       <BackToTop t={t} />
+      <Analytics />
       <SpeedInsights />
     </>
   );
