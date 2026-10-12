@@ -7,7 +7,7 @@ function Projects({ t }: { t: Content }) {
       <h2>{t.projects.title}</h2>
       <div className="projects-grid">
         {t.projects.list.map((proj, idx) => (
-          <div className="card project-card reveal" key={idx}>
+          <div className={proj.imageWide ? "card project-card project-card-wide reveal" : "card project-card reveal"} key={idx}>
             <div className="project-body">
               <span className="kind-badge">{proj.kind}</span>
               <h3>{proj.name}</h3>
@@ -18,6 +18,9 @@ function Projects({ t }: { t: Content }) {
                 ))}
               </div>
               <div className="project-links">
+                {proj.liveUrl && (
+                  <a className="project-link" href={proj.liveUrl} target="_blank" rel="noopener noreferrer">{t.projects.liveSite}</a>
+                )}
                 <a className="project-link" href={proj.url} target="_blank" rel="noopener noreferrer">{t.projects.viewOnGithub}</a>
                 {proj.demoAnchor && (
                   <a className="project-link" href={proj.demoAnchor}>{t.projects.tryDemo}</a>
@@ -25,12 +28,25 @@ function Projects({ t }: { t: Content }) {
               </div>
             </div>
             {proj.image && (
-              <img className="project-thumb" src={proj.image} alt={proj.imageAlt} width="520" height="720" loading="lazy" />
+              <img
+                className="project-thumb"
+                src={proj.image}
+                alt={proj.imageAlt}
+                width={proj.imageWide ? 1366 : 520}
+                height={proj.imageWide ? 768 : 720}
+                loading="lazy"
+              />
             )}
           </div>
         ))}
       </div>
       <p className="projects-more">
+        {t.projects.othersLabel}{" "}
+        {t.projects.others.map((other) => (
+          <span key={other.name}>
+            <a className="text-link" href={other.url} target="_blank" rel="noopener noreferrer">{other.name}</a>{" · "}
+          </span>
+        ))}
         {t.projects.more} <a className="text-link" href="https://github.com/KawanVictor" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
 

@@ -310,6 +310,11 @@ blockquote {
   border-color: rgba(56, 189, 248, 0.5);
   box-shadow: 0 16px 40px rgba(2, 8, 23, 0.5);
 }
+.project-card-wide .project-thumb { width: 44%; min-width: 0; }
+@media (max-width: 959px) {
+  .project-card-wide { flex-direction: column-reverse; }
+  .project-card-wide .project-thumb { width: 100%; }
+}
 .kind-badge {
   display: block;
   margin-bottom: 0.45rem;
@@ -356,7 +361,8 @@ blockquote {
 .sql-demo-examples .tag { font-family: inherit; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
 .sql-demo-examples .tag:hover { border-color: var(--accent); color: #fff; }
 .sql-demo-examples .tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.sql-demo-output { margin-top: 1.5rem; display: grid; gap: 1.5rem; }
+.sql-demo-output { margin-top: 1.5rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+.sql-demo-output > div { min-width: 0; }
 .sql-demo-output h4 {
   color: var(--muted);
   font-size: 0.8rem;
@@ -383,7 +389,7 @@ blockquote {
 .sql-demo-empty { color: var(--muted); }
 .sql-demo-note { margin-top: 1.25rem; color: var(--muted); font-size: 0.85rem; }
 @media (min-width: 960px) {
-  .sql-demo-output { grid-template-columns: 1.4fr 1fr; }
+  .sql-demo-output { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
   .sql-demo-form { flex-direction: column; }

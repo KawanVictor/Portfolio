@@ -15,6 +15,8 @@ interface Project {
   url: string;
   kind: string;
   demoAnchor?: string;
+  liveUrl?: string;
+  imageWide?: boolean;
   image?: string;
   imageAlt?: string;
 }
@@ -66,6 +68,9 @@ export interface Content {
     title: string;
     list: Project[];
     viewOnGithub: string;
+    liveSite: string;
+    othersLabel: string;
+    others: { name: string; url: string }[];
     tryDemo: string;
     demo: {
       badge: string;
@@ -101,6 +106,8 @@ const projectUrls = {
   sql: "https://github.com/KawanVictor/SQL-Interface",
   tetris: "https://github.com/KawanVictor/TetrisV2-java",
   chess: "https://github.com/KawanVictor/ChessGame",
+  notas: "https://github.com/KawanVictor/Notas-Escolares",
+  biblioteca: "https://github.com/KawanVictor/Biblioteca_Gamer",
   war: "https://github.com/KawanVictor/War"
 };
 
@@ -210,6 +217,17 @@ const pt: Content = {
         demoAnchor: "#sql-demo"
       },
       {
+        name: "Notas Escolares",
+        desc: "Site para professores lançarem as notas de uma turma, calcularem as médias do trimestre e exportarem a planilha em CSV ou PDF. Cada professor entra com a própria conta e só enxerga os seus lançamentos.",
+        tags: ["JavaScript", "Supabase", "PostgreSQL", "Testes + CI", "Vercel"],
+        url: projectUrls.notas,
+        liveUrl: "https://notas-escolares-iota.vercel.app",
+        kind: "Aplicação Web · No ar",
+        image: "/projects/notas-escolares.png",
+        imageAlt: "Planilha de lançamento de notas, com as médias coloridas por faixa",
+        imageWide: true
+      },
+      {
         name: "War",
         desc: "Jogo de tabuleiro War (inspirado em Risk) com motor de regras próprio, modo interativo no terminal e servidor web para partidas online em tempo real.",
         tags: ["Python", "Flask", "Socket.IO"],
@@ -224,14 +242,13 @@ const pt: Content = {
         kind: "Desktop · Java",
         image: "/projects/tetris.png",
         imageAlt: "Tela do jogo Tetris Java PRO"
-      },
-      {
-        name: "ChessGame",
-        desc: "Xadrez com interface gráfica para dois jogadores ou contra a IA (minimax com poda alfa-beta). Aplica as regras oficiais, incluindo roque, en passant e promoção, detecta xeque-mate e empates e permite desfazer jogadas.",
-        tags: ["Java", "Swing", "IA Minimax", "POO"],
-        url: projectUrls.chess,
-        kind: "Desktop · Java"
       }
+    ],
+    liveSite: "Ver site",
+    othersLabel: "Outros projetos:",
+    others: [
+      { name: "ChessGame", url: projectUrls.chess },
+      { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
     ],
     viewOnGithub: "Ver no GitHub",
     tryDemo: "Testar a demo",
@@ -460,6 +477,17 @@ const en: Content = {
         demoAnchor: "#sql-demo"
       },
       {
+        name: "Notas Escolares",
+        desc: "A site for teachers to enter a class's grades, calculate the term averages and export the sheet as CSV or PDF. Each teacher signs in with their own account and only sees their own records.",
+        tags: ["JavaScript", "Supabase", "PostgreSQL", "Tests + CI", "Vercel"],
+        url: projectUrls.notas,
+        liveUrl: "https://notas-escolares-iota.vercel.app",
+        kind: "Web App · Live",
+        image: "/projects/notas-escolares.png",
+        imageAlt: "Grade entry sheet, with averages colored by range",
+        imageWide: true
+      },
+      {
         name: "War",
         desc: "The board game War (inspired by Risk) with its own rules engine, an interactive terminal mode and a web server for real-time online matches.",
         tags: ["Python", "Flask", "Socket.IO"],
@@ -474,14 +502,13 @@ const en: Content = {
         kind: "Desktop · Java",
         image: "/projects/tetris.png",
         imageAlt: "Tetris Java PRO gameplay screen"
-      },
-      {
-        name: "ChessGame",
-        desc: "Chess with a GUI for two players or against an AI (minimax with alpha-beta pruning). Applies the official rules, including castling, en passant and promotion, detects checkmate and draws, and lets you undo moves.",
-        tags: ["Java", "Swing", "Minimax AI", "OOP"],
-        url: projectUrls.chess,
-        kind: "Desktop · Java"
       }
+    ],
+    liveSite: "View site",
+    othersLabel: "Other projects:",
+    others: [
+      { name: "ChessGame", url: projectUrls.chess },
+      { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
     ],
     viewOnGithub: "View on GitHub",
     tryDemo: "Try the demo",

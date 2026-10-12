@@ -8,7 +8,7 @@
 
 ## ✨ Sobre
 
-Bem-vindo ao meu portfólio! Sou Desenvolvedor Full Stack com experiência em telecom. Aqui apresento minha experiência profissional, minhas habilidades e meus projetos mais relevantes: [SQL-Interface](https://github.com/KawanVictor/SQL-Interface), [TetrisV2-java](https://github.com/KawanVictor/TetrisV2-java), [ChessGame](https://github.com/KawanVictor/ChessGame) e [War](https://github.com/KawanVictor/War).
+Bem-vindo ao meu portfólio! Sou Desenvolvedor Full Stack com experiência em telecom. Aqui apresento minha experiência profissional, minhas habilidades e meus projetos mais relevantes: [SQL-Interface](https://github.com/KawanVictor/SQL-Interface), [Notas-Escolares](https://github.com/KawanVictor/Notas-Escolares), [War](https://github.com/KawanVictor/War) e [TetrisV2-java](https://github.com/KawanVictor/TetrisV2-java). O site tem versão em português e inglês e uma demo interativa do SQL-Interface.
 
 ---
 
@@ -28,8 +28,12 @@ Bem-vindo ao meu portfólio! Sou Desenvolvedor Full Stack com experiência em te
 ├── src/
 │   ├── main.tsx
 │   ├── App.tsx
-│   ├── components/   # Header, HeroHighlight, About, Experience, Projects, Skills, Interests, Contact, Footer
+│   ├── content.ts    # Todos os textos do site, em português e inglês
+│   ├── components/   # Uma seção por arquivo: Header, HeroHighlight, About, Projects, SqlDemo, Skills, Experience...
+│   ├── demo/         # Lógica da demo do SQL-Interface que roda no navegador
 │   └── styles/main.css
+├── public/           # Currículos em PDF, imagens dos projetos e imagem de prévia de link
+├── .github/workflows/ci.yml   # Lint e build a cada push
 ├── eslint.config.js
 ├── tsconfig.json
 └── vite.config.ts
