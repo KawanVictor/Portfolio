@@ -405,7 +405,16 @@ blockquote {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 1.25rem;
 }
-.skills .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+/* Skills: colunas fixas, e o último card ocupa a linha inteira quando sobra sozinho */
+.skills .card-grid { grid-template-columns: 1fr; }
+@media (min-width: 640px) and (max-width: 959px) {
+  .skills .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills .card-grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 960px) {
+  .skills .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .skills .card-grid > .card:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
+}
 .card-grid h3 { font-size: 1.05rem; }
 .card-grid p { margin-top: 0.5rem; color: var(--muted); }
 .contact-label {

@@ -16,6 +16,7 @@ interface Project {
   kind: string;
   demoAnchor?: string;
   liveUrl?: string;
+  liveLabel?: string;
   imageWide?: boolean;
   image?: string;
   imageAlt?: string;
@@ -105,6 +106,7 @@ export interface Content {
 const projectUrls = {
   sql: "https://github.com/KawanVictor/SQL-Interface",
   tetris: "https://github.com/KawanVictor/TetrisV2-java",
+  destructor: "https://github.com/KawanVictor/GAME-DESTRUCTOR",
   chess: "https://github.com/KawanVictor/ChessGame",
   notas: "https://github.com/KawanVictor/Notas-Escolares",
   biblioteca: "https://github.com/KawanVictor/Biblioteca_Gamer",
@@ -235,18 +237,22 @@ const pt: Content = {
         kind: "Backend · WebSocket"
       },
       {
-        name: "Tetris Java PRO",
-        desc: "Tetris com interface gráfica Swing, cinco modos de jogo, peça fantasma, hold e ranking das melhores pontuações salvo em PostgreSQL. Projeto final de Programação Orientada a Objetos.",
-        tags: ["Java", "Swing", "PostgreSQL", "POO"],
-        url: projectUrls.tetris,
-        kind: "Desktop · Java",
-        image: "/projects/tetris.png",
-        imageAlt: "Tela do jogo Tetris Java PRO"
+        name: "DESTRUCTOR",
+        desc: "Jogo de ação e plataforma 2D no navegador em que você constrói paredes, armadilhas e torretas enquanto segura ondas de inimigos. Funciona no celular, com testes unitários e de navegador.",
+        tags: ["TypeScript", "Phaser 3", "Vite", "Vitest", "Playwright"],
+        url: projectUrls.destructor,
+        liveUrl: "https://game-destructor.vercel.app",
+        liveLabel: "Jogar agora",
+        kind: "Jogo Web · No ar",
+        image: "/projects/destructor.jpg",
+        imageAlt: "O chefe Titã chega enquanto as torretas defendem a colina",
+        imageWide: true
       }
     ],
     liveSite: "Ver site",
     othersLabel: "Outros projetos:",
     others: [
+      { name: "Tetris Java PRO", url: projectUrls.tetris },
       { name: "ChessGame", url: projectUrls.chess },
       { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
     ],
@@ -321,12 +327,17 @@ const pt: Content = {
       {
         title: "Banco de Dados",
         desc: "Modelagem de dados e consultas.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL"]
+        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL", "Supabase"]
       },
       {
         title: "DevOps",
         desc: "Empacotamento e deploy de serviços.",
-        tags: ["Docker", "Kubernetes", "Linux", "Git"]
+        tags: ["Docker", "Kubernetes", "Linux", "Git", "Vercel"]
+      },
+      {
+        title: "Testes & Qualidade",
+        desc: "Testes automatizados rodando no CI a cada envio.",
+        tags: ["pytest", "Vitest", "Playwright", "GitHub Actions"]
       },
       {
         title: "Observabilidade",
@@ -495,18 +506,22 @@ const en: Content = {
         kind: "Backend · WebSocket"
       },
       {
-        name: "Tetris Java PRO",
-        desc: "Tetris with a Swing GUI, five game modes, ghost piece, hold and a high-score ranking stored in PostgreSQL. Final project for an Object-Oriented Programming course.",
-        tags: ["Java", "Swing", "PostgreSQL", "OOP"],
-        url: projectUrls.tetris,
-        kind: "Desktop · Java",
-        image: "/projects/tetris.png",
-        imageAlt: "Tetris Java PRO gameplay screen"
+        name: "DESTRUCTOR",
+        desc: "A 2D action platformer in the browser where you build walls, traps and turrets while holding off waves of enemies. Works on mobile, with unit and browser tests.",
+        tags: ["TypeScript", "Phaser 3", "Vite", "Vitest", "Playwright"],
+        url: projectUrls.destructor,
+        liveUrl: "https://game-destructor.vercel.app",
+        liveLabel: "Play now",
+        kind: "Web Game · Live",
+        image: "/projects/destructor.jpg",
+        imageAlt: "The Titan boss arrives while turrets defend the hill",
+        imageWide: true
       }
     ],
     liveSite: "View site",
     othersLabel: "Other projects:",
     others: [
+      { name: "Tetris Java PRO", url: projectUrls.tetris },
       { name: "ChessGame", url: projectUrls.chess },
       { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
     ],
@@ -581,12 +596,17 @@ const en: Content = {
       {
         title: "Databases",
         desc: "Data modeling and queries.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL"]
+        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL", "Supabase"]
       },
       {
         title: "DevOps",
         desc: "Packaging and deploying services.",
-        tags: ["Docker", "Kubernetes", "Linux", "Git"]
+        tags: ["Docker", "Kubernetes", "Linux", "Git", "Vercel"]
+      },
+      {
+        title: "Testing & Quality",
+        desc: "Automated tests running in CI on every push.",
+        tags: ["pytest", "Vitest", "Playwright", "GitHub Actions"]
       },
       {
         title: "Observability",

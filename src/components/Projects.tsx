@@ -19,7 +19,7 @@ function Projects({ t }: { t: Content }) {
               </div>
               <div className="project-links">
                 {proj.liveUrl && (
-                  <a className="project-link" href={proj.liveUrl} target="_blank" rel="noopener noreferrer">{t.projects.liveSite}</a>
+                  <a className="project-link" href={proj.liveUrl} target="_blank" rel="noopener noreferrer">{proj.liveLabel ?? t.projects.liveSite}</a>
                 )}
                 <a className="project-link" href={proj.url} target="_blank" rel="noopener noreferrer">{t.projects.viewOnGithub}</a>
                 {proj.demoAnchor && (
@@ -32,8 +32,8 @@ function Projects({ t }: { t: Content }) {
                 className="project-thumb"
                 src={proj.image}
                 alt={proj.imageAlt}
-                width={proj.imageWide ? 1366 : 520}
-                height={proj.imageWide ? 768 : 720}
+                width={proj.imageWide ? 1600 : 520}
+                height={proj.imageWide ? 900 : 720}
                 loading="lazy"
               />
             )}
