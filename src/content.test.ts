@@ -1,5 +1,17 @@
 import { describe, expect, it } from 'vitest';
-import { content } from './content';
+import { content, WHATSAPP_NUMBER, whatsappUrl } from './content';
+
+describe('whatsappUrl', () => {
+  it('usa o formato do wa.me: só dígitos, com DDI e DDD', () => {
+    expect(WHATSAPP_NUMBER).toMatch(/^55\d{10,11}$/);
+  });
+
+  it('leva a mensagem codificada, com acentos e espaços', () => {
+    const url = new URL(whatsappUrl(content.pt.contact.whatsappMessage));
+    expect(url.origin + url.pathname).toBe(`https://wa.me/${WHATSAPP_NUMBER}`);
+    expect(url.searchParams.get('text')).toBe(content.pt.contact.whatsappMessage);
+  });
+});
 
 // Os componentes usam o próprio texto como `key` das listas: ele precisa ser único em cada lista.
 function duplicates(values: string[]): string[] {

@@ -425,7 +425,7 @@ blockquote {
   text-transform: uppercase;
 }
 .contact-label + h3 { margin-top: 0.4rem; }
-.contact-value { display: block; margin-top: 0.35rem; font-weight: 600; overflow-wrap: anywhere; }
+.contact-value { display: block; margin-top: 0.35rem; font-weight: 600; overflow-wrap: break-word; }
 
 .interests .card-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 

@@ -1,4 +1,4 @@
-import type { Content } from '../content';
+import { whatsappUrl, type Content } from '../content';
 
 function About({ t }: { t: Content }) {
   return (
@@ -13,6 +13,7 @@ function About({ t }: { t: Content }) {
         <div className="about-side">
           <blockquote>{t.about.quote}</blockquote>
           <div className="social">
+            <a className="btn btn-ghost" href={whatsappUrl(t.contact.whatsappMessage)} target="_blank" rel="noopener noreferrer">WhatsApp</a>
             <a className="btn btn-ghost" href="https://www.linkedin.com/in/kawan-cavalcante/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a className="btn btn-ghost" href="https://github.com/KawanVictor" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="btn btn-ghost" href="https://www.instagram.com/kavictor20/" target="_blank" rel="noopener noreferrer">Instagram</a>

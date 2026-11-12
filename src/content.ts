@@ -100,8 +100,17 @@ export interface Content {
   education: { title: string; items: { title: string; desc: string; status: string }[] };
   interests: { title: string; list: TaggedCard[] };
   meta: { title: string; description: string };
-  contact: { title: string; email: string; location: string; locationValue: string };
+  contact: { title: string; email: string; location: string; locationValue: string; whatsappMessage: string };
   footer: string;
+}
+
+// WhatsApp: número com DDI e DDD, só dígitos (formato exigido pelo wa.me)
+export const WHATSAPP_NUMBER = "5541991199082";
+export const WHATSAPP_DISPLAY = "+55 (41) 99119-9082";
+
+/** Link que abre a conversa no WhatsApp com a mensagem já escrita. */
+export function whatsappUrl(message: string): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 const projectUrls = {
@@ -399,7 +408,8 @@ const pt: Content = {
     title: "Contato",
     email: "E-mail",
     location: "Localização",
-    locationValue: "Curitiba, Paraná, Brasil"
+    locationValue: "Curitiba, Paraná, Brasil",
+    whatsappMessage: "Olá, Kawan! Vi seu portfólio e gostaria de conversar."
   },
   footer: "Inspirado por design e conteúdo digital"
 };
@@ -687,7 +697,8 @@ const en: Content = {
     title: "Contact",
     email: "Email",
     location: "Location",
-    locationValue: "Curitiba, Paraná, Brazil"
+    locationValue: "Curitiba, Paraná, Brazil",
+    whatsappMessage: "Hi Kawan! I saw your portfolio and would like to talk."
   },
   footer: "Inspired by design and digital content"
 };

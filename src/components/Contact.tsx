@@ -1,4 +1,4 @@
-import type { Content } from '../content';
+import { WHATSAPP_DISPLAY, whatsappUrl, type Content } from '../content';
 
 function Contact({ t }: { t: Content }) {
   return (
@@ -7,7 +7,11 @@ function Contact({ t }: { t: Content }) {
       <div className="card-grid">
         <div className="card reveal">
           <span className="contact-label">{t.contact.email}</span>
-          <a className="contact-value" href="mailto:kawan.cavalcante@outlook.com">kawan.cavalcante@outlook.com</a>
+          <a className="contact-value" href="mailto:kawan.cavalcante@outlook.com">kawan.cavalcante<wbr />@outlook.com</a>
+        </div>
+        <div className="card reveal">
+          <span className="contact-label">WhatsApp</span>
+          <a className="contact-value" href={whatsappUrl(t.contact.whatsappMessage)} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a>
         </div>
         <div className="card reveal">
           <span className="contact-label">LinkedIn</span>
