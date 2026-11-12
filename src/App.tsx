@@ -13,17 +13,18 @@ import Interests from './components/Interests';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import { initialLang, urlForLang } from './lang';
 
 const LANG_KEY = 'lang';
 
 function getInitialLang(): Lang {
+  let saved: string | null = null;
   try {
-    const saved = localStorage.getItem(LANG_KEY);
-    if (saved === 'pt' || saved === 'en') return saved;
+    saved = localStorage.getItem(LANG_KEY);
   } catch {
-    // localStorage indisponível: segue com o idioma do navegador
+    // localStorage indisponível: decide só pelo endereço
   }
-  return navigator.language.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+  return initialLang(window.location.pathname, saved);
 }
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
     document.documentElement.lang = lang === 'pt' ? 'pt-br' : 'en';
     document.title = content[lang].meta.title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', content[lang].meta.description);
+    const { search, hash } = window.location;
+    const url = urlForLang(lang, search, hash);
+    if (url !== window.location.pathname + search + hash) {
+      window.history.replaceState(null, '', url);
+    }
     try {
       localStorage.setItem(LANG_KEY, lang);
     } catch {
