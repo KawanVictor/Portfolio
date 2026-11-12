@@ -44,6 +44,7 @@ export interface Content {
     interests: string;
     contact: string;
     openMenu: string;
+    closeMenu: string;
     switchLang: string;
     switchLangLabel: string;
     backToTop: string;
@@ -125,6 +126,7 @@ const pt: Content = {
     interests: "Interesses",
     contact: "Contato",
     openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
     switchLang: "EN",
     switchLangLabel: "Switch to English",
     backToTop: "Voltar ao topo"
@@ -220,7 +222,7 @@ const pt: Content = {
         liveUrl: projectUrls.pcccDownload,
         liveLabel: "Baixar para Windows",
         kind: "App Desktop · Windows",
-        image: "/projects/pc-control-center.jpg",
+        image: "/projects/pc-control-center.webp",
         imageAlt: "Painel do PC Control Center com uso de CPU, memória, GPU, disco e rede em tempo real",
         imageWide: true
       },
@@ -232,7 +234,7 @@ const pt: Content = {
         liveUrl: "https://game-destructor.vercel.app",
         liveLabel: "Jogar agora",
         kind: "Jogo Web · No ar",
-        image: "/projects/destructor.jpg",
+        image: "/projects/destructor.webp",
         imageAlt: "O chefe Titã chega enquanto as torretas defendem a colina",
         imageWide: true
       },
@@ -243,7 +245,7 @@ const pt: Content = {
         url: projectUrls.sql,
         kind: "Full Stack",
         demoAnchor: "#sql-demo",
-        image: "/projects/sql-interface.jpg",
+        image: "/projects/sql-interface.webp",
         imageAlt: "Pergunta em português e a tabela de resultado com o total de falhas por canal",
         imageWide: true
       },
@@ -254,7 +256,7 @@ const pt: Content = {
         url: projectUrls.notas,
         liveUrl: "https://notas-escolares-iota.vercel.app",
         kind: "Aplicação Web · No ar",
-        image: "/projects/notas-escolares.png",
+        image: "/projects/notas-escolares.webp",
         imageAlt: "Planilha de lançamento de notas, com as médias coloridas por faixa",
         imageWide: true
       }
@@ -403,6 +405,7 @@ const en: Content = {
     interests: "Interests",
     contact: "Contact",
     openMenu: "Open menu",
+    closeMenu: "Close menu",
     switchLang: "PT",
     switchLangLabel: "Mudar para português",
     backToTop: "Back to top"
@@ -498,7 +501,7 @@ const en: Content = {
         liveUrl: projectUrls.pcccDownload,
         liveLabel: "Download for Windows",
         kind: "Desktop App · Windows",
-        image: "/projects/pc-control-center.jpg",
+        image: "/projects/pc-control-center.webp",
         imageAlt: "PC Control Center dashboard with real-time CPU, memory, GPU, disk and network usage",
         imageWide: true
       },
@@ -510,7 +513,7 @@ const en: Content = {
         liveUrl: "https://game-destructor.vercel.app",
         liveLabel: "Play now",
         kind: "Web Game · Live",
-        image: "/projects/destructor.jpg",
+        image: "/projects/destructor.webp",
         imageAlt: "The Titan boss arrives while turrets defend the hill",
         imageWide: true
       },
@@ -521,7 +524,7 @@ const en: Content = {
         url: projectUrls.sql,
         kind: "Full Stack",
         demoAnchor: "#sql-demo",
-        image: "/projects/sql-interface.jpg",
+        image: "/projects/sql-interface.webp",
         imageAlt: "A question in Portuguese and the result table with the failure count per channel",
         imageWide: true
       },
@@ -532,7 +535,7 @@ const en: Content = {
         url: projectUrls.notas,
         liveUrl: "https://notas-escolares-iota.vercel.app",
         kind: "Web App · Live",
-        image: "/projects/notas-escolares.png",
+        image: "/projects/notas-escolares.webp",
         imageAlt: "Grade entry sheet, with averages colored by range",
         imageWide: true
       }

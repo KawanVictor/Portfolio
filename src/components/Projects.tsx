@@ -6,15 +6,15 @@ function Projects({ t }: { t: Content }) {
     <section id="projects" className="projects">
       <h2>{t.projects.title}</h2>
       <div className="projects-grid">
-        {t.projects.list.map((proj, idx) => (
-          <div className={proj.imageWide ? "card project-card project-card-wide reveal" : "card project-card reveal"} key={idx}>
+        {t.projects.list.map((proj) => (
+          <div className={proj.imageWide ? "card project-card project-card-wide reveal" : "card project-card reveal"} key={proj.name}>
             <div className="project-body">
               <span className="kind-badge">{proj.kind}</span>
               <h3>{proj.name}</h3>
               <p>{proj.desc}</p>
               <div className="tags">
-                {proj.tags.map((tag, tIdx) => (
-                  <span className="tag" key={tIdx}>{tag}</span>
+                {proj.tags.map((tag) => (
+                  <span className="tag" key={tag}>{tag}</span>
                 ))}
               </div>
               <div className="project-links">
@@ -55,14 +55,14 @@ function Projects({ t }: { t: Content }) {
       <h3 className="subsection-title">{t.projects.workTitle}</h3>
       <p className="subsection-note">{t.projects.workNote}</p>
       <div className="card-grid work-grid">
-        {t.projects.work.map((item, idx) => (
-          <div className="card reveal" key={idx}>
+        {t.projects.work.map((item) => (
+          <div className="card reveal" key={item.title}>
             {item.kind && <span className="kind-badge">{item.kind}</span>}
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
             <div className="tags">
-              {item.tags.map((tag, tIdx) => (
-                <span className="tag" key={tIdx}>{tag}</span>
+              {item.tags.map((tag) => (
+                <span className="tag" key={tag}>{tag}</span>
               ))}
             </div>
           </div>

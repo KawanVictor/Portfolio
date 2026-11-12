@@ -6,8 +6,8 @@ function About({ t }: { t: Content }) {
       <h2>{t.about.title}</h2>
       <div className="about-layout">
         <div className="about-text">
-          {t.about.paragraphs.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
+          {t.about.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
         <div className="about-side">

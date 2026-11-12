@@ -14,8 +14,8 @@ function HeroHighlight({ t }: { t: Content }) {
         </div>
       </div>
       <ul className="hero-highlights">
-        {t.hero.highlights.map((item, idx) => (
-          <li className="card" key={idx}>
+        {t.hero.highlights.map((item) => (
+          <li className="card" key={item.label}>
             <strong>{item.value}</strong>
             <span>{item.label}</span>
           </li>

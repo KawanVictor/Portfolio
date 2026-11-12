@@ -5,13 +5,13 @@ function Skills({ t }: { t: Content }) {
     <section id="skills" className="skills">
       <h2>{t.skills.title}</h2>
       <div className="card-grid">
-        {t.skills.groups.map((group, idx) => (
-          <div className="card reveal" key={idx}>
+        {t.skills.groups.map((group) => (
+          <div className="card reveal" key={group.title}>
             <h3>{group.title}</h3>
             <p>{group.desc}</p>
             <div className="tags">
-              {group.tags.map((tag, tIdx) => (
-                <span className="tag" key={tIdx}>{tag}</span>
+              {group.tags.map((tag) => (
+                <span className="tag" key={tag}>{tag}</span>
               ))}
             </div>
           </div>

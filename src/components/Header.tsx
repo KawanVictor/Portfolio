@@ -1,22 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Content } from '../content';
 
-const SECTION_IDS = ["about", "experience", "projects", "skills", "education", "interests", "contact"];
+// Ids das seções, na ordem da página; o texto de cada link vem de t.nav[id]
+const NAV_IDS = ["about", "projects", "skills", "experience", "education", "interests", "contact"] as const;
 
 function Header({ t, onToggleLang }: { t: Content; onToggleLang: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
-  const links = [
-    { id: "about", label: t.nav.about },
-    { id: "projects", label: t.nav.projects },
-    { id: "skills", label: t.nav.skills },
-    { id: "experience", label: t.nav.experience },
-    { id: "education", label: t.nav.education },
-    { id: "interests", label: t.nav.interests },
-    { id: "contact", label: t.nav.contact }
-  ];
+  const headerRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  // Destaca no menu a seção que está no meio da tela
+  // Destaca no menu a seção que está no meio da tela; no topo ("top"), nenhuma
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,15 +20,35 @@ function Header({ t, onToggleLang }: { t: Content; onToggleLang: () => void }) {
       },
       { rootMargin: "-45% 0px -50% 0px" }
     );
-    for (const id of SECTION_IDS) {
+    for (const id of ["top", ...NAV_IDS]) {
       const section = document.getElementById(id);
       if (section) observer.observe(section);
     }
     return () => observer.disconnect();
   }, []);
 
+  // Menu aberto no celular: Esc ou um toque fora do cabeçalho fecham
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="header-inner">
         <a href="#top" className="brand">Kawan Victor Cavalcante</a>
         <div className="header-actions">
@@ -42,9 +56,10 @@ function Header({ t, onToggleLang }: { t: Content; onToggleLang: () => void }) {
             {t.nav.switchLang}
           </button>
           <button
+            ref={toggleRef}
             type="button"
             className="nav-toggle"
-            aria-label={t.nav.openMenu}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={menuOpen}
             aria-controls="main-nav"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -55,15 +70,15 @@ function Header({ t, onToggleLang }: { t: Content; onToggleLang: () => void }) {
           </button>
         </div>
         <nav id="main-nav" className={menuOpen ? "open" : undefined}>
-          {links.map((link) => (
+          {NAV_IDS.map((id) => (
             <a
-              href={`#${link.id}`}
-              key={link.id}
-              className={activeId === link.id ? "active" : undefined}
-              aria-current={activeId === link.id ? "true" : undefined}
+              href={`#${id}`}
+              key={id}
+              className={activeId === id ? "active" : undefined}
+              aria-current={activeId === id ? "true" : undefined}
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              {t.nav[id]}
             </a>
           ))}
         </nav>

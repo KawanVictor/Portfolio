@@ -37,7 +37,7 @@ function SqlDemo({ t }: { t: Content }) {
         <button type="submit" className="btn btn-primary">{demo.run}</button>
       </form>
 
-      <div className="sql-demo-examples" aria-label={demo.examplesLabel}>
+      <div className="sql-demo-examples" role="group" aria-label={demo.examplesLabel}>
         {demo.examples.map((example) => (
           <button type="button" className="tag" key={example} onClick={() => pickExample(example)}>
             {example}
