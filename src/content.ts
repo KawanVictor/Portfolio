@@ -140,7 +140,7 @@ const pt: Content = {
     ctaCv: "Baixar CV",
     cvUrl: "/cv/Kawan_Cavalcante_Curriculo_PT.pdf",
     highlights: [
-      { value: "5+ anos", label: "na Vivo (Telefônica Brasil)" },
+      { value: "6 anos", label: "na Vivo (Telefônica Brasil)" },
       { value: "Full Stack", label: "React, TypeScript, Node.js, NestJS e Python" },
       { value: "DevOps & IA", label: "Docker, Kubernetes e integração de agentes de IA" },
       { value: "Observabilidade", label: "Grafana, Zabbix, OpenSearch e Graylog" }
@@ -151,7 +151,7 @@ const pt: Content = {
     paragraphs: [
       "Comecei na operação de telecom (N1/N2), lidando com monitoramento de ambientes críticos, incidentes e indicadores de SLA. Com o tempo, passei a resolver esses problemas com código. Hoje construo APIs, conectores e dashboards que reduzem trabalho manual e dão visibilidade para a operação.",
       "O que me diferencia: entendo tanto a rede quanto o software. Já trabalhei com IPTV/OTT e equipamentos Cisco, Nokia e Huawei, e hoje escrevo os sistemas que monitoram e automatizam esse ambiente.",
-      "Busco posições de Desenvolvedor Backend / Full Stack, com interesse em DevOps, SRE e observabilidade. Tenho preferência por trabalho remoto e estou aberto a empresas no Brasil e no exterior."
+      "Busco posições de Desenvolvedor Backend / Full Stack, com interesse em DevOps, SRE e observabilidade. Estou aberto a trabalho remoto, híbrido ou presencial, em empresas no Brasil e no exterior."
     ],
     quote: "“Sempre busco aliar criatividade, técnica e trabalho em equipe para transformar ideias em soluções reais.”"
   },
@@ -159,47 +159,38 @@ const pt: Content = {
     title: "Experiência Profissional",
     roles: [
       {
-        title: "Analista Telecom Jr.",
-        company: "Vivo (Telefônica Brasil) · Equipe de Transformação Digital",
+        title: "Analista Telecom Jr",
+        company: "Telefônica Brasil (Vivo) · Equipe Transformação Digital · Engenharia de Transporte e Infraestrutura",
         period: "mar/25 – atual",
-        summary: "Desenvolvimento de integrações entre sistemas, automações e ferramentas internas para operação de rede.",
+        summary: "Desenvolvimento de sistemas, integrações e automação para operação de rede e infraestrutura.",
         items: [
-          "Conectores e integração de sistemas: APIs REST entre plataformas de rede, monitoramento e ferramentas internas.",
-          "Integração de agentes de IA para automação de rotinas operacionais.",
-          "Empacotamento e deploy de serviços com Docker e Kubernetes.",
-          "Observabilidade com Grafana, Zabbix, OpenSearch e Graylog para métricas, logs e KPIs.",
-          "Painel de monitoramento de infraestrutura que centraliza o status dos equipamentos (Node.js, TypeScript, React).",
-          "Automação de tarefas repetitivas do N1, com acompanhamento de KPI/SLA."
+          "Desenvolvo conectores e integrações entre sistemas internos, com deploy em Docker e Kubernetes.",
+          "Integro agentes de IA a fluxos operacionais de rede e infraestrutura.",
+          "Criei sistema de monitoramento de infraestrutura (Node.js, TypeScript, React) sobre a API do Calicux.",
+          "Desenvolvi API de Speedtest/Ookla em Python, com ingestão e análise no OpenSearch e Graylog."
         ]
       },
       {
-        title: "Técnico Corporativo Telecom PL",
-        company: "Vivo (Telefônica Brasil)",
+        title: "Técnico Telecom Pleno",
+        company: "Telefônica Brasil (Vivo) · O&M TV Transformation",
         period: "mar/23 – fev/25",
-        summary: "Apoio às equipes de campo na configuração/manutenção de redes empresariais.",
+        summary: "Operação e transformação da plataforma de TV (IPTV), com foco em automação e indicadores.",
         items: [
-          "Implantação de rotinas de backup/restauração de sistemas críticos.",
-          "Participação em comitês de resposta a incidentes, propondo soluções preventivas.",
-          "Análise de logs, performance de rede, homologação de atualizações."
+          "Automatizei rotinas manuais da área de VOC (IPTV), após mapear as atividades do N1.",
+          "Desenvolvi a aplicação VOC/Carimbo (TypeScript, React, banco de dados).",
+          "Criei, com a área de Qualidade, o indicador KPI TV/BL de clientes afetados."
         ]
       },
       {
-        title: "Atendente de Suporte de Operações",
-        company: "Vivo (Telefônica Brasil)",
-        period: "nov/20 – mar/23",
-        summary: "Ponto de contato para clientes com falhas em serviços.",
+        title: "Suporte Técnico N1/N2",
+        company: "Telefônica Brasil (Vivo) · Operação de TV · IPTV/OTT",
+        period: "nov/20 – fev/23",
+        summary: "Monitoramento e tratamento de incidentes em ambientes críticos de TV.",
         items: [
-          "Atendimento humanizado e ótimo índice de satisfação.",
-          "Desenvolvimento de playbooks de troubleshooting técnico.",
-          "Triagem de chamados, priorização e follow-up para times especializados."
+          "Monitorei ambientes críticos de TV (IPTV/OTT) com Grafana, Zabbix e DataMiner.",
+          "Atuei no tratamento de incidentes em equipamentos Nokia, Cisco e Huawei.",
+          "Acompanhei indicadores de KPI e SLA da operação."
         ]
-      },
-      {
-        title: "Agente de Call Center",
-        company: "Brasil Telecom Call Center S.A",
-        period: "ago/20 – nov/20",
-        summary: "Atendimento técnico de 1º nível para usuários de serviços digitais, orientação didática e encaminhamento assertivo.",
-        items: []
       }
     ],
     competenciesTitle: "Principais Competências & Diferenciais",
@@ -300,27 +291,33 @@ const pt: Content = {
     work: [
       {
         title: "Monitoramento de Infraestrutura",
-        desc: "Painel que consome a API de monitoramento da rede e centraliza o status dos equipamentos.",
-        tags: ["Node.js", "TypeScript", "React"],
+        desc: "Painel de monitoramento de infraestrutura integrado à API do Calicux, centralizando o status dos ambientes em uma interface web.",
+        tags: ["Node.js", "TypeScript", "React", "API Calicux"],
         kind: "Full Stack"
       },
       {
-        title: "API de Speedtest",
-        desc: "Coleta e indexa medições de velocidade para análise de qualidade.",
+        title: "API de Speedtest/Ookla",
+        desc: "API para coleta e análise de testes de velocidade, com ingestão de dados no OpenSearch e consulta via Graylog.",
         tags: ["Python", "OpenSearch", "Graylog"],
         kind: "Backend"
       },
       {
-        title: "KPIs de TV e Banda Larga",
-        desc: "Indicadores de clientes afetados, desenvolvidos junto com a área de Qualidade.",
-        tags: ["TypeScript", "React", "SQL"],
+        title: "VOC/Carimbo",
+        desc: "Aplicação web para a área de VOC da Vivo, focada em IPTV, com front-end em React e persistência em banco de dados.",
+        tags: ["TypeScript", "React", "Banco de dados"],
         kind: "Full Stack"
       },
       {
-        title: "Automação de N1",
-        desc: "Mapeamento das atividades do N1 e automação de tarefas repetitivas, com acompanhamento de KPI/SLA.",
-        tags: ["TypeScript", "Python"],
-        kind: "Backend"
+        title: "Automação VOC",
+        desc: "Automação de rotinas da área de VOC (IPTV), a partir do mapeamento das atividades do N1 e da definição de KPIs e SLAs.",
+        tags: ["Automação", "KPI/SLA", "Processos"],
+        kind: "Automação"
+      },
+      {
+        title: "KPI TV/BL",
+        desc: "Indicador de clientes afetados em TV e banda larga, construído em conjunto com a área de Qualidade.",
+        tags: ["Indicadores", "Qualidade", "Dados"],
+        kind: "Dados"
       }
     ]
   },
@@ -328,24 +325,29 @@ const pt: Content = {
     title: "Principais Habilidades",
     groups: [
       {
-        title: "Frontend",
-        desc: "Interfaces web responsivas e painéis de indicadores.",
-        tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]
+        title: "Linguagens",
+        desc: "As que uso no dia a dia e nos projetos pessoais.",
+        tags: ["TypeScript", "JavaScript", "Python", "Go", "Java", "C#", "PHP (básico)"]
+      },
+      {
+        title: "Frontend / Mobile",
+        desc: "Interfaces web responsivas, painéis de indicadores e apps.",
+        tags: ["React", "Vue", "Vite", "HTML", "CSS", "Expo"]
       },
       {
         title: "Backend",
         desc: "APIs REST, conectores e integrações entre sistemas.",
-        tags: ["Node.js", "NestJS", "Python", "FastAPI", "REST APIs"]
+        tags: ["Node.js", "NestJS", "FastAPI", "APIs REST", "Integração de sistemas"]
       },
       {
         title: "Banco de Dados",
         desc: "Modelagem de dados e consultas.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL", "Supabase"]
+        tags: ["PostgreSQL", "MariaDB", "MySQL", "SQL", "Supabase"]
       },
       {
         title: "DevOps",
         desc: "Empacotamento e deploy de serviços.",
-        tags: ["Docker", "Kubernetes", "Linux", "Git", "Vercel"]
+        tags: ["Docker", "Kubernetes", "Linux", "Git/GitHub", "Vercel"]
       },
       {
         title: "Testes & Qualidade",
@@ -355,7 +357,12 @@ const pt: Content = {
       {
         title: "Observabilidade",
         desc: "Métricas, logs e KPIs para a operação.",
-        tags: ["Grafana", "Zabbix", "OpenSearch", "Graylog"]
+        tags: ["Grafana", "Zabbix", "DataMiner", "OpenSearch", "Graylog", "Calicux"]
+      },
+      {
+        title: "Telecom",
+        desc: "Operação de TV e redes, do monitoramento ao tratamento de incidentes.",
+        tags: ["IPTV", "OTT", "Redes", "Nokia", "Cisco", "Huawei"]
       },
       {
         title: "IA & Automação",
@@ -368,9 +375,11 @@ const pt: Content = {
     title: "Formação",
     items: [
       { title: "Pós-graduação em Desenvolvimento de Sistemas com Python", desc: "", status: "Em andamento" },
-      { title: "Engenharia de Software", desc: "Estácio · 2025–2029", status: "Em andamento" },
-      { title: "Análise e Desenvolvimento de Sistemas", desc: "Unicesumar", status: "Concluído" },
-      { title: "Certificações", desc: "Banco de Dados, Linux e Desenvolvimento Web", status: "Concluído" }
+      { title: "Engenharia de Software", desc: "Estácio · abr/2025 – abr/2029", status: "Cursando" },
+      { title: "Tecnólogo em Análise e Desenvolvimento de Sistemas", desc: "Unicesumar · jan/2024 – jul/2026", status: "Concluído" },
+      { title: "Tecnólogo em Mecatrônica", desc: "IFSP", status: "Concluído" },
+      { title: "Certificações (Udemy)", desc: "Banco de Dados, Linux e Desenvolvimento Web", status: "Concluído" },
+      { title: "Português nativo · Inglês avançado", desc: "", status: "Idiomas" }
     ]
   },
   interests: {
@@ -419,7 +428,7 @@ const en: Content = {
     ctaCv: "Download Resume",
     cvUrl: "/cv/Kawan_Cavalcante_Resume_EN.pdf",
     highlights: [
-      { value: "5+ years", label: "at Vivo (Telefônica Brasil)" },
+      { value: "6 years", label: "at Vivo (Telefônica Brasil)" },
       { value: "Full Stack", label: "React, TypeScript, Node.js, NestJS and Python" },
       { value: "DevOps & AI", label: "Docker, Kubernetes and AI-agent integration" },
       { value: "Observability", label: "Grafana, Zabbix, OpenSearch and Graylog" }
@@ -430,7 +439,7 @@ const en: Content = {
     paragraphs: [
       "I started in telecom operations (L1/L2), handling monitoring of critical environments, incidents and SLA indicators. Over time, I began solving those problems with code. Today I build APIs, connectors and dashboards that cut manual work and give operations visibility.",
       "What sets me apart: I understand both the network and the software. I have worked with IPTV/OTT and Cisco, Nokia and Huawei equipment, and today I write the systems that monitor and automate that environment.",
-      "I'm looking for Backend / Full Stack Developer roles, with an interest in DevOps, SRE and observability. I prefer remote work and I'm open to companies in Brazil and abroad."
+      "I'm looking for Backend / Full Stack Developer roles, with an interest in DevOps, SRE and observability. I'm open to remote work and relocation, with companies in Brazil and abroad."
     ],
     quote: "“I always aim to combine creativity, technique and teamwork to turn ideas into real solutions.”"
   },
@@ -439,46 +448,37 @@ const en: Content = {
     roles: [
       {
         title: "Junior Telecom Analyst",
-        company: "Vivo (Telefônica Brasil) · Digital Transformation team",
-        period: "Mar 2025 – present",
-        summary: "Building system integrations, automation and internal tools for network operations.",
+        company: "Telefônica Brasil (Vivo) · Digital Transformation Team · Transport and Infrastructure Engineering",
+        period: "Mar 2025 – Present",
+        summary: "Systems development, integrations and automation for network and infrastructure operations.",
         items: [
-          "Connectors and system integration: REST APIs between network platforms, monitoring and internal tools.",
-          "AI-agent integrations to automate operational routines.",
-          "Packaging and deploying services with Docker and Kubernetes.",
-          "Observability with Grafana, Zabbix, OpenSearch and Graylog for metrics, logs and KPIs.",
-          "Infrastructure monitoring dashboard that centralizes equipment status (Node.js, TypeScript, React).",
-          "Automation of repetitive L1 tasks, with KPI/SLA tracking."
+          "Build connectors and integrations between internal systems, deployed with Docker and Kubernetes.",
+          "Integrate AI agents into network and infrastructure operations workflows.",
+          "Built an infrastructure monitoring system (Node.js, TypeScript, React) on the Calicux API.",
+          "Developed a Speedtest/Ookla API in Python, with ingestion and analysis in OpenSearch and Graylog."
         ]
       },
       {
-        title: "Corporate Telecom Technician (Mid-level)",
-        company: "Vivo (Telefônica Brasil)",
+        title: "Telecom Technician (Mid-level)",
+        company: "Telefônica Brasil (Vivo) · TV Transformation O&M",
         period: "Mar 2023 – Feb 2025",
-        summary: "Support for field teams in configuring and maintaining enterprise networks.",
+        summary: "Operations and transformation of the TV (IPTV) platform, focused on automation and metrics.",
         items: [
-          "Rolled out backup/restore routines for critical systems.",
-          "Took part in incident response committees, proposing preventive solutions.",
-          "Log analysis, network performance and validation of updates."
+          "Automated manual routines for the VOC (IPTV) team after mapping L1 activities.",
+          "Developed the VOC/Carimbo web application (TypeScript, React, database).",
+          "Built the TV/Broadband affected-customer KPI together with the Quality team."
         ]
       },
       {
-        title: "Operations Support Agent",
-        company: "Vivo (Telefônica Brasil)",
-        period: "Nov 2020 – Mar 2023",
-        summary: "Point of contact for customers with service failures.",
+        title: "L1/L2 Technical Support",
+        company: "Telefônica Brasil (Vivo) · TV Operations · IPTV/OTT",
+        period: "Nov 2020 – Feb 2023",
+        summary: "Monitoring and incident handling on mission-critical TV platforms.",
         items: [
-          "Customer-focused service with a high satisfaction rate.",
-          "Wrote technical troubleshooting playbooks.",
-          "Ticket triage, prioritization and follow-up with specialized teams."
+          "Monitored mission-critical TV platforms (IPTV/OTT) with Grafana, Zabbix and DataMiner.",
+          "Handled incidents on Nokia, Cisco and Huawei equipment.",
+          "Tracked operational KPI and SLA performance."
         ]
-      },
-      {
-        title: "Call Center Agent",
-        company: "Brasil Telecom Call Center S.A",
-        period: "Aug 2020 – Nov 2020",
-        summary: "First-level technical support for users of digital services, with clear guidance and accurate escalation.",
-        items: []
       }
     ],
     competenciesTitle: "Key Strengths",
@@ -579,27 +579,33 @@ const en: Content = {
     work: [
       {
         title: "Infrastructure Monitoring",
-        desc: "Dashboard that consumes the network monitoring API and centralizes equipment status.",
-        tags: ["Node.js", "TypeScript", "React"],
+        desc: "Infrastructure monitoring dashboard integrated with the Calicux API, bringing environment status into a single web interface.",
+        tags: ["Node.js", "TypeScript", "React", "Calicux API"],
         kind: "Full Stack"
       },
       {
-        title: "Speedtest API",
-        desc: "Collects and indexes speed measurements for quality analysis.",
+        title: "Speedtest/Ookla API",
+        desc: "API for collecting and analyzing network speed tests, with data ingestion into OpenSearch and querying through Graylog.",
         tags: ["Python", "OpenSearch", "Graylog"],
         kind: "Backend"
       },
       {
-        title: "TV and Broadband KPIs",
-        desc: "Affected-customer indicators, built together with the Quality team.",
-        tags: ["TypeScript", "React", "SQL"],
+        title: "VOC/Carimbo",
+        desc: "Web application for Vivo's internal VOC team, focused on IPTV, with a React front end and database persistence.",
+        tags: ["TypeScript", "React", "Database"],
         kind: "Full Stack"
       },
       {
-        title: "L1 Automation",
-        desc: "Mapping of L1 activities and automation of repetitive tasks, with KPI/SLA tracking.",
-        tags: ["TypeScript", "Python"],
-        kind: "Backend"
+        title: "VOC Automation",
+        desc: "Automated routines for the VOC (IPTV) team, based on mapping L1 activities and defining KPIs and SLAs.",
+        tags: ["Automation", "KPI/SLA", "Processes"],
+        kind: "Automation"
+      },
+      {
+        title: "TV/Broadband KPI",
+        desc: "Affected-customer metric for TV and broadband services, built together with the Quality team.",
+        tags: ["Metrics", "Quality", "Data"],
+        kind: "Data"
       }
     ]
   },
@@ -607,24 +613,29 @@ const en: Content = {
     title: "Core Skills",
     groups: [
       {
-        title: "Frontend",
-        desc: "Responsive web interfaces and KPI dashboards.",
-        tags: ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]
+        title: "Languages",
+        desc: "The ones I use day to day and in personal projects.",
+        tags: ["TypeScript", "JavaScript", "Python", "Go", "Java", "C#", "PHP (basic)"]
+      },
+      {
+        title: "Frontend / Mobile",
+        desc: "Responsive web interfaces, KPI dashboards and apps.",
+        tags: ["React", "Vue", "Vite", "HTML", "CSS", "Expo"]
       },
       {
         title: "Backend",
         desc: "REST APIs, connectors and system integrations.",
-        tags: ["Node.js", "NestJS", "Python", "FastAPI", "REST APIs"]
+        tags: ["Node.js", "NestJS", "FastAPI", "REST APIs", "Systems integration"]
       },
       {
         title: "Databases",
         desc: "Data modeling and queries.",
-        tags: ["PostgreSQL", "MySQL", "MariaDB", "SQL", "Supabase"]
+        tags: ["PostgreSQL", "MariaDB", "MySQL", "SQL", "Supabase"]
       },
       {
         title: "DevOps",
         desc: "Packaging and deploying services.",
-        tags: ["Docker", "Kubernetes", "Linux", "Git", "Vercel"]
+        tags: ["Docker", "Kubernetes", "Linux", "Git/GitHub", "Vercel"]
       },
       {
         title: "Testing & Quality",
@@ -634,7 +645,12 @@ const en: Content = {
       {
         title: "Observability",
         desc: "Metrics, logs and KPIs for operations.",
-        tags: ["Grafana", "Zabbix", "OpenSearch", "Graylog"]
+        tags: ["Grafana", "Zabbix", "DataMiner", "OpenSearch", "Graylog", "Calicux"]
+      },
+      {
+        title: "Telecom",
+        desc: "TV and network operations, from monitoring to incident handling.",
+        tags: ["IPTV", "OTT", "Networking", "Nokia", "Cisco", "Huawei"]
       },
       {
         title: "AI & Automation",
@@ -646,10 +662,12 @@ const en: Content = {
   education: {
     title: "Education",
     items: [
-      { title: "Postgraduate degree in Systems Development with Python", desc: "", status: "In progress" },
-      { title: "Software Engineering", desc: "Estácio · 2025–2029", status: "In progress" },
-      { title: "Systems Analysis and Development", desc: "Unicesumar", status: "Completed" },
-      { title: "Certifications", desc: "Databases, Linux and Web Development", status: "Completed" }
+      { title: "Graduate Certificate in Systems Development with Python", desc: "", status: "In progress" },
+      { title: "B.Sc. Software Engineering", desc: "Estácio · Apr 2025 – Apr 2029 (expected)", status: "In progress" },
+      { title: "Associate Degree in Systems Analysis and Development", desc: "Unicesumar · Jan 2024 – Jul 2026", status: "Completed" },
+      { title: "Associate Degree in Mechatronics", desc: "IFSP", status: "Completed" },
+      { title: "Certifications (Udemy)", desc: "Databases, Linux and Web Development", status: "Completed" },
+      { title: "Portuguese (native) · English (advanced)", desc: "", status: "Languages" }
     ]
   },
   interests: {
