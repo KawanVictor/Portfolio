@@ -104,6 +104,8 @@ export interface Content {
 }
 
 const projectUrls = {
+  pccc: "https://github.com/KawanVictor/PC-Control-Center",
+  pcccDownload: "https://github.com/KawanVictor/PC-Control-Center/releases/latest",
   sql: "https://github.com/KawanVictor/SQL-Interface",
   tetris: "https://github.com/KawanVictor/TetrisV2-java",
   destructor: "https://github.com/KawanVictor/GAME-DESTRUCTOR",
@@ -211,30 +213,16 @@ const pt: Content = {
     title: "Projetos em Destaque",
     list: [
       {
-        name: "SQL-Interface",
-        desc: "Converte perguntas em português em consultas SQL sobre logs de falhas de transmissão. API com parser, gerador e validador de SQL, interface web e tudo sobe com um comando via Docker.",
-        tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
-        url: projectUrls.sql,
-        kind: "Full Stack",
-        demoAnchor: "#sql-demo"
-      },
-      {
-        name: "Notas Escolares",
-        desc: "Site para professores lançarem as notas de uma turma, calcularem as médias do trimestre e exportarem a planilha em CSV ou PDF. Cada professor entra com a própria conta e só enxerga os seus lançamentos.",
-        tags: ["JavaScript", "Supabase", "PostgreSQL", "Testes + CI", "Vercel"],
-        url: projectUrls.notas,
-        liveUrl: "https://notas-escolares-iota.vercel.app",
-        kind: "Aplicação Web · No ar",
-        image: "/projects/notas-escolares.png",
-        imageAlt: "Planilha de lançamento de notas, com as médias coloridas por faixa",
+        name: "PC Control Center",
+        desc: "Central de monitoramento, otimização e personalização do Windows com dados reais do computador: desempenho, rede e aparelhos conectados, widgets de área de trabalho e cenários de um clique. Funciona sem administrador, faz backup antes de mexer no Registro e pede confirmação nas ações críticas.",
+        tags: ["Python", "PySide6 (Qt 6)", "API do Windows", "SQLite", "ruff + mypy"],
+        url: projectUrls.pccc,
+        liveUrl: projectUrls.pcccDownload,
+        liveLabel: "Baixar para Windows",
+        kind: "App Desktop · Windows",
+        image: "/projects/pc-control-center.jpg",
+        imageAlt: "Painel do PC Control Center com uso de CPU, memória, GPU, disco e rede em tempo real",
         imageWide: true
-      },
-      {
-        name: "War",
-        desc: "Jogo de tabuleiro War (inspirado em Risk) com motor de regras próprio, modo interativo no terminal e servidor web para partidas online em tempo real.",
-        tags: ["Python", "Flask", "Socket.IO"],
-        url: projectUrls.war,
-        kind: "Backend · WebSocket"
       },
       {
         name: "DESTRUCTOR",
@@ -247,11 +235,34 @@ const pt: Content = {
         image: "/projects/destructor.jpg",
         imageAlt: "O chefe Titã chega enquanto as torretas defendem a colina",
         imageWide: true
+      },
+      {
+        name: "SQL-Interface",
+        desc: "Converte perguntas em português em consultas SQL sobre logs de falhas de transmissão. API com parser, gerador e validador de SQL, interface web e tudo sobe com um comando via Docker.",
+        tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
+        url: projectUrls.sql,
+        kind: "Full Stack",
+        demoAnchor: "#sql-demo",
+        image: "/projects/sql-interface.jpg",
+        imageAlt: "Pergunta em português e a tabela de resultado com o total de falhas por canal",
+        imageWide: true
+      },
+      {
+        name: "Notas Escolares",
+        desc: "Site para professores lançarem as notas de uma turma, calcularem as médias do trimestre e exportarem a planilha em CSV ou PDF. Cada professor entra com a própria conta e só enxerga os seus lançamentos.",
+        tags: ["JavaScript", "Supabase", "PostgreSQL", "Testes + CI", "Vercel"],
+        url: projectUrls.notas,
+        liveUrl: "https://notas-escolares-iota.vercel.app",
+        kind: "Aplicação Web · No ar",
+        image: "/projects/notas-escolares.png",
+        imageAlt: "Planilha de lançamento de notas, com as médias coloridas por faixa",
+        imageWide: true
       }
     ],
     liveSite: "Ver site",
     othersLabel: "Outros projetos:",
     others: [
+      { name: "War (Python + Socket.IO)", url: projectUrls.war },
       { name: "Tetris Java PRO", url: projectUrls.tetris },
       { name: "ChessGame", url: projectUrls.chess },
       { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
@@ -480,30 +491,16 @@ const en: Content = {
     title: "Featured Projects",
     list: [
       {
-        name: "SQL-Interface",
-        desc: "Turns questions written in Portuguese into SQL queries over broadcast failure logs. API with a parser, SQL builder and validator, a web interface, and everything starts with one Docker command.",
-        tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
-        url: projectUrls.sql,
-        kind: "Full Stack",
-        demoAnchor: "#sql-demo"
-      },
-      {
-        name: "Notas Escolares",
-        desc: "A site for teachers to enter a class's grades, calculate the term averages and export the sheet as CSV or PDF. Each teacher signs in with their own account and only sees their own records.",
-        tags: ["JavaScript", "Supabase", "PostgreSQL", "Tests + CI", "Vercel"],
-        url: projectUrls.notas,
-        liveUrl: "https://notas-escolares-iota.vercel.app",
-        kind: "Web App · Live",
-        image: "/projects/notas-escolares.png",
-        imageAlt: "Grade entry sheet, with averages colored by range",
+        name: "PC Control Center",
+        desc: "A Windows monitoring, tuning and customization hub that reads real data from the computer: performance, network and connected devices, desktop widgets and one-click scenes. Runs without admin rights, backs up the Registry before changing it and asks for confirmation on critical actions.",
+        tags: ["Python", "PySide6 (Qt 6)", "Windows API", "SQLite", "ruff + mypy"],
+        url: projectUrls.pccc,
+        liveUrl: projectUrls.pcccDownload,
+        liveLabel: "Download for Windows",
+        kind: "Desktop App · Windows",
+        image: "/projects/pc-control-center.jpg",
+        imageAlt: "PC Control Center dashboard with real-time CPU, memory, GPU, disk and network usage",
         imageWide: true
-      },
-      {
-        name: "War",
-        desc: "The board game War (inspired by Risk) with its own rules engine, an interactive terminal mode and a web server for real-time online matches.",
-        tags: ["Python", "Flask", "Socket.IO"],
-        url: projectUrls.war,
-        kind: "Backend · WebSocket"
       },
       {
         name: "DESTRUCTOR",
@@ -516,11 +513,34 @@ const en: Content = {
         image: "/projects/destructor.jpg",
         imageAlt: "The Titan boss arrives while turrets defend the hill",
         imageWide: true
+      },
+      {
+        name: "SQL-Interface",
+        desc: "Turns questions written in Portuguese into SQL queries over broadcast failure logs. API with a parser, SQL builder and validator, a web interface, and everything starts with one Docker command.",
+        tags: ["Python", "FastAPI", "React", "MySQL", "Docker"],
+        url: projectUrls.sql,
+        kind: "Full Stack",
+        demoAnchor: "#sql-demo",
+        image: "/projects/sql-interface.jpg",
+        imageAlt: "A question in Portuguese and the result table with the failure count per channel",
+        imageWide: true
+      },
+      {
+        name: "Notas Escolares",
+        desc: "A site for teachers to enter a class's grades, calculate the term averages and export the sheet as CSV or PDF. Each teacher signs in with their own account and only sees their own records.",
+        tags: ["JavaScript", "Supabase", "PostgreSQL", "Tests + CI", "Vercel"],
+        url: projectUrls.notas,
+        liveUrl: "https://notas-escolares-iota.vercel.app",
+        kind: "Web App · Live",
+        image: "/projects/notas-escolares.png",
+        imageAlt: "Grade entry sheet, with averages colored by range",
+        imageWide: true
       }
     ],
     liveSite: "View site",
     othersLabel: "Other projects:",
     others: [
+      { name: "War (Python + Socket.IO)", url: projectUrls.war },
       { name: "Tetris Java PRO", url: projectUrls.tetris },
       { name: "ChessGame", url: projectUrls.chess },
       { name: "Biblioteca Gamer", url: projectUrls.biblioteca }
