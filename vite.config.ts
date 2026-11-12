@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { content } from './src/content'
@@ -28,5 +29,10 @@ function englishPage(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [react(), englishPage()]
+  plugins: [react(), englishPage()],
+  test: {
+    // DOM simulado (jsdom) para os testes de componentes com a Testing Library
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+  },
 })

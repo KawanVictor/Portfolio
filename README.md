@@ -41,7 +41,9 @@ Outros: [War](https://github.com/KawanVictor/War), [TetrisV2-java](https://githu
 │   ├── lang.ts           # Idioma pelo endereço (/ e /en/) e geração do HTML em inglês
 │   ├── components/       # Uma seção por arquivo: Header, HeroHighlight, About, Projects, SqlDemo, Skills...
 │   ├── demo/             # Lógica da demo do SQL-Interface que roda no navegador
-│   ├── *.test.ts         # Testes (Vitest)
+│   ├── whatsapp.ts       # Link do WhatsApp (número codificado, montado só na interação)
+│   ├── *.test.ts(x)      # Testes (Vitest + Testing Library)
+│   ├── test/setup.ts     # Preparação dos testes de componentes (jsdom)
 │   └── styles/main.css
 ├── public/               # Currículos em PDF, imagens dos projetos (WebP), robots.txt e sitemap.xml
 ├── .github/workflows/ci.yml   # Lint, testes e build a cada push
@@ -68,7 +70,7 @@ O projeto estará disponível em [http://localhost:5173](http://localhost:5173) 
 | Comando | O que faz |
 |---|---|
 | `npm run dev` | Servidor de desenvolvimento |
-| `npm test` | Testes (parser da demo, idiomas e conteúdo) |
+| `npm test` | Testes com Vitest: lógica (parser da demo, idiomas, conteúdo) e componentes renderizados com a Testing Library |
 | `npm run lint` | ESLint |
 | `npm run build` | Checagem de tipos e build de produção em `dist/` |
 | `npm run preview` | Serve o build localmente |

@@ -1,4 +1,5 @@
-import { WHATSAPP_DISPLAY, whatsappUrl, type Content } from '../content';
+import type { Content } from '../content';
+import WhatsAppLink from './WhatsAppLink';
 
 function Contact({ t }: { t: Content }) {
   return (
@@ -11,7 +12,7 @@ function Contact({ t }: { t: Content }) {
         </div>
         <div className="card reveal">
           <span className="contact-label">WhatsApp</span>
-          <a className="contact-value" href={whatsappUrl(t.contact.whatsappMessage)} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a>
+          <WhatsAppLink className="contact-value" message={t.contact.whatsappMessage}>{t.contact.whatsappCta}</WhatsAppLink>
         </div>
         <div className="card reveal">
           <span className="contact-label">LinkedIn</span>
