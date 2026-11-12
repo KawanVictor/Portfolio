@@ -85,7 +85,8 @@ export function parseQuestion(question: string): ParsedQuestion {
     }
   }
 
-  const severidade = tokens.find((token) => token in SEVERIDADES);
+  // Object.hasOwn: "in" também aceitaria nomes herdados, como "constructor"
+  const severidade = tokens.find((token) => Object.hasOwn(SEVERIDADES, token));
   if (severidade) {
     parsed.where.push("severidade = :severidade");
     parsed.params.severidade = SEVERIDADES[severidade];
